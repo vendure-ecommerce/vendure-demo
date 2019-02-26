@@ -1,0 +1,13 @@
+{
+  "name": "vendure-demo",
+  "version": "1.0.0",
+  "description": "Demo of the Vendure server",
+  "main": "index.js",
+  "author": "Michael Bromley",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@vendure/core": "^0.1.0-alpha.7",
+    "sqlite3": "^4.0.6"
+  }
+}

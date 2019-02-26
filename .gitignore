@@ -1,0 +1,5 @@
+.idea
+node_modules
+vendure/assets
+vendure/import-assets
+vendure.sqlite
