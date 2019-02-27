@@ -256,10 +256,10 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@vendure/core@^0.1.0-alpha.10":
-  version "0.1.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-0.1.0-alpha.10.tgz#03b97e2ca0fc6d76ba772b0fa9158f88218ba9e6"
-  integrity sha512-FBJspQt+7n/YSk1ZoBlokYNMWSibobKfbswyQNdUVoaBS6QmML4gf9uT9VovgPy8TsqMjoD7aM8wjQ8qfwbEAg==
+"@vendure/core@^0.1.0-alpha.11":
+  version "0.1.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-0.1.0-alpha.11.tgz#da1ee9aab495db2a56ef9b594cdf78f607d1ffc2"
+  integrity sha512-E4M8rRJGn3W0Yb/tVpZAEt4430ysaj/EOJjMEhAAXruHY18kySNYbCLyZVZYDtefEWiO8G1Lu+AONh7pcvK+qg==
   dependencies:
     "@nestjs/common" "5.7.2"
     "@nestjs/core" "5.7.2"
@@ -1318,6 +1318,13 @@ cors@^2.8.4:
   dependencies:
     object-assign "^4"
     vary "^1"
+
+cron@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/cron/-/cron-1.6.0.tgz#15f92c1b5a930c5cdfcd53fe940064fa8ca2e72d"
+  integrity sha512-8OkXbeK3qF42ndzkIkCo3zfCDg2TxGjQiCQqVE+ZFFHa4vAcw0PdBc5i/6aJ9FppLncyKZmDuZdJ9/uuXEYZaw==
+  dependencies:
+    moment-timezone "^0.5.x"
 
 cross-env@^5.1.4:
   version "5.2.0"
@@ -4111,6 +4118,18 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "0.0.8"
 
+moment-timezone@^0.5.x:
+  version "0.5.23"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.23.tgz#7cbb00db2c14c71b19303cb47b0fb0a6d8651463"
+  integrity sha512-WHFH85DkCfiNMDX5D3X7hpNH3/PUhjTGcD0U1SgfBGZxJ3qUmJh5FdvaFjcClxOvB3rzdfj4oRffbI38jEnC1w==
+  dependencies:
+    moment ">= 2.9.0"
+
+"moment@>= 2.9.0":
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -5148,7 +5167,7 @@ retry@0.12.0:
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=
 
-rimraf@^2.2.8, rimraf@^2.6.1, rimraf@^2.6.3:
+rimraf@^2.2.8, rimraf@^2.6.1:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
   integrity sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==

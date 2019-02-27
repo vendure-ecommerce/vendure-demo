@@ -18,7 +18,7 @@ const config = {
         type: 'sqlite',
         synchronize: false, // not working with SQLite/SQL.js, see https://github.com/typeorm/typeorm/issues/2576
         logging: false,
-        database: 'C:\\Development\\vendure\\vendure-demo\\vendure.sqlite',
+        database: path.join(__dirname, 'vendure.sqlite'),
     },
     paymentOptions: {
         paymentMethodHandlers: [examplePaymentHandler],

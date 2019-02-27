@@ -1,4 +1,6 @@
 node_modules
+data-cache
+vendure/assets
 yarn-error.log
 Dockerfile
 .dockerignore

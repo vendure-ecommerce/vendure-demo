@@ -4,3 +4,4 @@ vendure/assets
 vendure/import-assets
 vendure.sqlite
 yarn-error.log
+data-cache
