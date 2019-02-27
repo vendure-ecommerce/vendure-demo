@@ -6,8 +6,12 @@
   "author": "Michael Bromley",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "yarn vendure populate && node index.js"
+  },
   "dependencies": {
-    "@vendure/core": "^0.1.0-alpha.7",
+    "@vendure/core": "^0.1.0-alpha.10",
+    "rimraf": "^2.6.3",
     "sqlite3": "^4.0.6"
   }
 }

@@ -4,7 +4,6 @@ const {
     DefaultAssetServerPlugin,
     DefaultEmailPlugin,
     DefaultSearchPlugin,
-    
 } = require('@vendure/core');
 const path = require('path');
 

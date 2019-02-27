@@ -256,10 +256,10 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@vendure/core@^0.1.0-alpha.7":
-  version "0.1.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-0.1.0-alpha.7.tgz#0b32552fdbf74660ff65b9f1c5243ee7dd9198d3"
-  integrity sha512-8Y3g5/CLvQh2Jp6L0a/UM948CP3pfopVTpXJDs0O+msihaKyQv+vdnjSFwvmaKWO09GJ1x4LMp2bMr/JM6NiOA==
+"@vendure/core@^0.1.0-alpha.10":
+  version "0.1.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-0.1.0-alpha.10.tgz#03b97e2ca0fc6d76ba772b0fa9158f88218ba9e6"
+  integrity sha512-FBJspQt+7n/YSk1ZoBlokYNMWSibobKfbswyQNdUVoaBS6QmML4gf9uT9VovgPy8TsqMjoD7aM8wjQ8qfwbEAg==
   dependencies:
     "@nestjs/common" "5.7.2"
     "@nestjs/core" "5.7.2"
@@ -276,7 +276,7 @@
     dateformat "^3.0.3"
     express "^4.16.4"
     fs-extra "^7.0.1"
-    graphql "^14.0.0"
+    graphql "^14.1.1"
     graphql-iso-date "^3.6.1"
     graphql-tag "^2.10.0"
     graphql-tools "^4.0.3"
@@ -2471,7 +2471,7 @@ graphql-upload@^8.0.2:
     http-errors "^1.7.1"
     object-path "^0.11.4"
 
-graphql@^14.0.0:
+graphql@^14.1.1:
   version "14.1.1"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.1.1.tgz#d5d77df4b19ef41538d7215d1e7a28834619fac0"
   integrity sha512-C5zDzLqvfPAgTtP8AUPIt9keDabrdRAqSWjj2OPRKrKxI9Fb65I36s1uCs1UUBFnSWTdO7hyHi7z1ZbwKMKF6Q==
@@ -5148,7 +5148,7 @@ retry@0.12.0:
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=
 
-rimraf@^2.2.8, rimraf@^2.6.1:
+rimraf@^2.2.8, rimraf@^2.6.1, rimraf@^2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
   integrity sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==
