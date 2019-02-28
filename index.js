@@ -3,6 +3,7 @@ const { config } = require('./vendure-config');
 const { exec } = require('child_process');
 const fs = require('fs-extra');
 const path = require('path');
+const { request } = require('graphql-request');
 const CronJob = require('cron').CronJob;
 
 const CACHE_DIR = 'data-cache';
@@ -31,7 +32,8 @@ async function resetServer() {
                 // tslint:disable-next-line:no-console
                 console.log(err);
             });
-        });
+        })
+        .then(() => createTestCustomer())
 }
 
 /**
@@ -84,4 +86,21 @@ async function cachePopulatedContent() {
 
 function cacheExists() {
     return fs.existsSync(CACHE_DIR);
+}
+
+/**
+ * Creates a test customer
+ */
+function createTestCustomer() {
+    const query = `
+        mutation {
+          registerCustomerAccount(input: {
+            firstName: "Rio"
+            lastName: "Zephyr"
+            emailAddress: "test@vendure.io"
+            password: "test"
+          })
+        }
+    `;
+    return request('http://localhost:3000/shop-api', query);
 }

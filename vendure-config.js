@@ -11,6 +11,7 @@ const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
 const config = {
     authOptions: {
         sessionSecret: '9s8wl7vkd8',
+        requireVerification: false,
     },
     port: 3000,
     adminApiPath: 'admin-api',
