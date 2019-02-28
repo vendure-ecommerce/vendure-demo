@@ -6,6 +6,7 @@ const {
     DefaultSearchPlugin,
 } = require('@vendure/core');
 const path = require('path');
+const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
 
 const config = {
     authOptions: {
@@ -39,6 +40,7 @@ const config = {
         }),
         new DefaultSearchPlugin(),
         new AdminUiPlugin({ port: 3002 }),
+        new LandingPagePlugin(),
     ],
 };
 

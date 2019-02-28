@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vendure Demo</title>
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Source+Code+Pro|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <img class="logo" src="logo.png" alt="Vendure logo">
+        <h1>vendure demo</h1>
+    </div>
+    <p class="lead">This is a live demo of the Vendure server and admin ui application.</p>
+    <p>The demo is a full, unrestricted instance of the Vendure server. All shop and admin operations can be performed, changing
+    the data in any way you like. Every hour the data is reset to a pristine form.</p>
+    <p>Back to <a href="https://www.vendure.io/">vendure.io</a></p>
+    <div class="cards">
+        <div class="card">
+            <div class="card-header">
+                <h2>Admin UI</h2>
+            </div>
+            <div class="card-body">
+                Login credentials:
+                <ul>
+                    <li>username: <strong>superadmin</strong></li>
+                    <li>password: <strong>superadmin</strong></li>
+                </ul>
+            </div>
+            <div class="card-button">
+                <a href="./admin">Launch Admin UI</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2>Shop GraphQL API</h2>
+            </div>
+            <div class="card-body">
+                For operations requiring login:
+                <ul>
+                    <li>username: <strong>test@vendure.io</strong></li>
+                    <li>password: <strong>test</strong></li>
+                </ul>
+            </div>
+            <div class="card-button">
+                <a href="./shop-api">Shop API Playground</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2>Admin GraphQL API</h2>
+            </div>
+            <div class="card-body">
+                For operations requiring login:
+                <ul>
+                    <li>username: <strong>superadmin</strong></li>
+                    <li>password: <strong>superadmin</strong></li>
+                </ul>
+            </div>
+            <div class="card-button">
+                <a href="./admin-api">Admin API Playground</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
