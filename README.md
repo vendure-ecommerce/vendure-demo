@@ -20,7 +20,7 @@ docker run --name vendure -p 3000:3000 -d vendure-demo
 
 ## Deploying
 
-The demo is being deployed to a Digital Ocean server running Dokku at [http://37.139.25.167](http://37.139.25.167). 
+The demo is being deployed to a Digital Ocean server running [Dokku](https://github.com/dokku/dokku) at [https://demo.vendure.io](https://demo.vendure.io). 
 
 See [Host your Node app on Dokku & DigitalOcean](https://medium.com/@pimterry/host-your-node-app-on-dokku-digitalocean-1cb97e3ab041) for a guide to how this was set up.
 
