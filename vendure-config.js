@@ -11,7 +11,7 @@ const config = {
     authOptions: {
         sessionSecret: '9s8wl7vkd8',
     },
-    port: 3000,
+    port: 80,
     adminApiPath: 'admin-api',
     shopApiPath: 'shop-api',
     dbConnectionOptions: {

@@ -6,5 +6,5 @@ COPY yarn.lock ./
 USER node
 RUN yarn
 COPY --chown=node:node . .
-EXPOSE 3000
+EXPOSE 80
 CMD [ "yarn", "start" ]
