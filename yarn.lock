@@ -256,10 +256,10 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@vendure/core@^0.1.0-alpha.11":
-  version "0.1.0-alpha.11"
-  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-0.1.0-alpha.11.tgz#da1ee9aab495db2a56ef9b594cdf78f607d1ffc2"
-  integrity sha512-E4M8rRJGn3W0Yb/tVpZAEt4430ysaj/EOJjMEhAAXruHY18kySNYbCLyZVZYDtefEWiO8G1Lu+AONh7pcvK+qg==
+"@vendure/core@^0.1.0-alpha.12":
+  version "0.1.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-0.1.0-alpha.12.tgz#5edee4e700386cf0224737f5a3c1fb6eae5f1f14"
+  integrity sha512-vBOQ5YjK5yH9nrm6MbJQxalOLp+wjPPysoEgPspX36Xl654P7SIe+Lgfz4IyROw/vUpuxjcu15VF8/IBLl4dJA==
   dependencies:
     "@nestjs/common" "5.7.2"
     "@nestjs/core" "5.7.2"
