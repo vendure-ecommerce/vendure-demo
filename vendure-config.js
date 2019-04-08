@@ -1,10 +1,7 @@
-const {
-    AdminUiPlugin,
-    examplePaymentHandler,
-    DefaultAssetServerPlugin,
-    DefaultEmailPlugin,
-    DefaultSearchPlugin,
-} = require('@vendure/core');
+const { AdminUiPlugin } = require('@vendure/admin-ui-plugin');
+const { AssetServerPlugin } = require('@vendure/asset-server-plugin');
+const { examplePaymentHandler, DefaultSearchPlugin } = require('@vendure/core');
+const { EmailPlugin } = require('@vendure/email-plugin');
 const path = require('path');
 const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
 
@@ -30,13 +27,14 @@ const config = {
         importAssetsDir: path.join(__dirname, 'vendure/import-assets'),
     },
     plugins: [
-        new DefaultAssetServerPlugin({
+        new AssetServerPlugin({
             route: 'assets',
             assetUploadDir: path.join(__dirname, 'vendure/assets'),
             port: 3001,
         }),
-        new DefaultEmailPlugin({
+        new EmailPlugin({
             templatePath: path.join(__dirname, 'vendure/email/templates'),
+            outputPath: path.join(__dirname, 'vendure/email/output'),
             devMode: true,
         }),
         new DefaultSearchPlugin(),

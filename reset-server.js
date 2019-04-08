@@ -1,4 +1,5 @@
 const { bootstrap } = require('@vendure/core');
+const { populate } = require('@vendure/core/dist/cli/populate');
 const { config } = require('./vendure-config');
 const { exec } = require('child_process');
 const fs = require('fs-extra');
@@ -34,7 +35,7 @@ async function resetServer() {
             if (cacheExists()) {
                 return resetFromCache();
             } else {
-                return populate().then(() => cachePopulatedContent());
+                return populateServer().then(() => cachePopulatedContent());
             }
         })
         .then(async () => {
@@ -59,19 +60,23 @@ async function clean() {
 /**
  * Runs the Vendure CLI `populate` command
  */
-function populate() {
+function populateServer() {
     console.log('Populating');
-    return new Promise(((resolve, reject) => {
-        exec('yarn vendure populate', (err, stdin, stderr) => {
-            if (err) {
-                console.log(stderr);
-                reject(err);
-            } else {
-                console.log(stdin);
-                resolve();
-            }
-        });
-    }));
+    return populate(
+        () => bootstrap({
+            ...config,
+            dbConnectionOptions: {
+                ...config.dbConnectionOptions,
+                synchronize: true,
+            },
+            importExportOptions: {
+                importAssetsDir: path.join(__dirname, './node_modules/@vendure/create/assets/images'),
+            },
+        }),
+        path.join(__dirname, './node_modules/@vendure/create/assets/initial-data.json'),
+        path.join(__dirname, './node_modules/@vendure/create/assets/products.csv'),
+        path.join(__dirname, './node_modules/@vendure/create/assets/images'),
+    ).then(app => app.close());
 }
 
 /**
