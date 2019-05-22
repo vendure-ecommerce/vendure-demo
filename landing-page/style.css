@@ -85,6 +85,16 @@ p.lead {
     background-color: #40a2de;
 }
 
+.card-button-secondary {
+    text-align: center;
+}
+.card-button-secondary a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #40a2de;
+}
+
 @media all and (max-width: 600px) {
     h1 {
         font-size: 2em;

@@ -1,7 +1,7 @@
 const { AdminUiPlugin } = require('@vendure/admin-ui-plugin');
 const { AssetServerPlugin } = require('@vendure/asset-server-plugin');
 const { examplePaymentHandler, DefaultSearchPlugin } = require('@vendure/core');
-const { EmailPlugin } = require('@vendure/email-plugin');
+const { EmailPlugin, defaultEmailHandlers } = require('@vendure/email-plugin');
 const path = require('path');
 const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
 
@@ -33,8 +33,10 @@ const config = {
             port: 3001,
         }),
         new EmailPlugin({
+            handlers: defaultEmailHandlers,
             templatePath: path.join(__dirname, 'vendure/email/templates'),
             outputPath: path.join(__dirname, 'vendure/email/output'),
+            mailboxPort: 3003,
             devMode: true,
         }),
         new DefaultSearchPlugin(),

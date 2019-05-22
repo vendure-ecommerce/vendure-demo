@@ -2,6 +2,7 @@
 node_modules
 vendure/assets
 vendure/import-assets
+vendure/email/output
 vendure.sqlite
 yarn-error.log
 data-cache
