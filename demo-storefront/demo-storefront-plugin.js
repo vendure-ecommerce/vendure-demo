@@ -22,7 +22,7 @@ class DemoStorefrontPlugin {
         this.serverProcess.on('close', (code) => {
           console.log(`Storefront server exited with code ${code}`);
         });
-        return this.overwriteAdminUiConfig('https://demo.vendure.io', 80);
+        return this.overwriteAdminUiConfig('https://demo.vendure.io', 443);
     }
 
     configure(config) {
