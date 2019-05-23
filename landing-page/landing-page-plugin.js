@@ -6,16 +6,22 @@ const path = require('path');
  * This plugin just serves the index.html file at the root.
  */
 class LandingPagePlugin {
+
+    constructor(ignorePaths) {
+        this.ignorePaths = ignorePaths;
+    }
+
     configure(config) {
-        const assetRe = /^\/assets\/(.*)/;
         config.middleware.push({
             handler: (req, res, next) => {
-                if (req.url.indexOf('/admin-api') !== 0 && req.url.indexOf('/shop-api') !== 0) {
-                    const file = req.url === '/' ? 'index.html' : req.url;
-                    res.sendFile(path.join(__dirname, file));
-                } else {
-                    next();
+                for (const path of this.ignorePaths) {
+                    if (req.url.indexOf(path) !== 0) {
+                        next();
+                        return;
+                    }
                 }
+                const file = req.url === '/' ? 'index.html' : req.url;
+                res.sendFile(path.join(__dirname, file));
             },
             route: '/',
         });

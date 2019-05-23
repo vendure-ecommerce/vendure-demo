@@ -7,5 +7,6 @@ COPY yarn.lock ./
 USER node
 RUN yarn
 COPY --chown=node:node . .
+RUN demo-storefront/install-storefront.sh
 EXPOSE 3000
 CMD [ "pm2-runtime", "index.js" ]

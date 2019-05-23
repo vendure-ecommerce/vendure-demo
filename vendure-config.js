@@ -4,6 +4,7 @@ const { examplePaymentHandler, DefaultSearchPlugin } = require('@vendure/core');
 const { EmailPlugin, defaultEmailHandlers } = require('@vendure/email-plugin');
 const path = require('path');
 const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
+const { DemoStorefrontPlugin } = require('./demo-storefront/demo-storefront-plugin');
 
 const config = {
     authOptions: {
@@ -41,7 +42,8 @@ const config = {
         }),
         new DefaultSearchPlugin(),
         new AdminUiPlugin({ port: 3002 }),
-        new LandingPagePlugin(),
+        new DemoStorefrontPlugin(),
+        new LandingPagePlugin(['/admin-api', '/shop-api', '/storefront']),
     ],
 };
 
