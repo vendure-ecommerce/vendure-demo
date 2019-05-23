@@ -7,21 +7,17 @@ const path = require('path');
  */
 class LandingPagePlugin {
 
-    constructor(ignorePaths) {
-        this.ignorePaths = ignorePaths;
-    }
-
     configure(config) {
         config.middleware.push({
             handler: (req, res, next) => {
-                for (const path of this.ignorePaths) {
-                    if (req.url.indexOf(path) !== 0) {
-                        next();
-                        return;
-                    }
+                if (req.url.indexOf('/admin-api') !== 0 &&
+                    req.url.indexOf('/shop-api') !== 0 &&
+                    req.url.indexOf('/storefront') !== 0) {
+                    const file = req.url === '/' ? 'index.html' : req.url;
+                    res.sendFile(path.join(__dirname, file));
+                } else {
+                    next();
                 }
-                const file = req.url === '/' ? 'index.html' : req.url;
-                res.sendFile(path.join(__dirname, file));
             },
             route: '/',
         });

@@ -42,8 +42,8 @@ const config = {
         }),
         new DefaultSearchPlugin(),
         new AdminUiPlugin({ port: 3002 }),
+        new LandingPagePlugin(),
         new DemoStorefrontPlugin(),
-        new LandingPagePlugin(['/admin-api', '/shop-api', '/storefront']),
     ],
 };
 
