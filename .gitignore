@@ -6,4 +6,3 @@ vendure/email/output
 vendure.sqlite
 yarn-error.log
 data-cache
-demo-storefront/storefront

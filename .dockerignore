@@ -1,7 +1,6 @@
 node_modules
 data-cache
 vendure/assets
-demo-storefront/storefront
 yarn-error.log
 Dockerfile
 .dockerignore

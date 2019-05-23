@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Not currently used because building the storefront takes up
+# too much memory for the basic DigitalOcean droplet it is hosted on.
 cd "${0%/*}"
 git clone https://github.com/vendure-ecommerce/storefront.git
 cd storefront

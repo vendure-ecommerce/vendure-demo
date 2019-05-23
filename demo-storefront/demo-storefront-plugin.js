@@ -10,7 +10,7 @@ const os = require('os');
  */
 class DemoStorefrontPlugin {
     onBootstrap() {
-        this.serverProcess = spawn(`node`, ['storefront/dist/server.js'], { cwd: __dirname });
+        this.serverProcess = spawn(`node`, ['storefront/server.js'], { cwd: __dirname });
         this.serverProcess.stdout.on('data', (data) => {
           console.log(`Storefront server: ${data}`);
         });
@@ -46,7 +46,7 @@ class DemoStorefrontPlugin {
      * the server admin API.
      */
     async overwriteAdminUiConfig(host, port) {
-        const configPath = path.join(__dirname, 'storefront/dist/browser/storefront-config.json');
+        const configPath = path.join(__dirname, 'storefront/browser/storefront-config.json');
         const storefrontConfig = await fs.readFile(configPath, 'utf-8');
         const config = JSON.parse(storefrontConfig);
         config.apiHost = host;
