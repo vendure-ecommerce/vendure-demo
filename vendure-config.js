@@ -32,6 +32,7 @@ const config = {
             route: 'assets',
             assetUploadDir: path.join(__dirname, 'vendure/assets'),
             port: 3001,
+            assetUrlPrefix: 'https://demo.vendure.io/assets/'
         }),
         new EmailPlugin({
             handlers: defaultEmailHandlers,
