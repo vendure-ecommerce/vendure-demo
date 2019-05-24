@@ -55,6 +55,12 @@ p.lead {
 
 .card-header h2 {
     margin: 12px;
+    display: flex;
+    align-items: center;
+}
+.card-header h2 img {
+    max-width: 50px;
+    margin-right: 12px;
 }
 .card-body {
     padding: 12px;
