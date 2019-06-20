@@ -1,11 +1,11 @@
-FROM node:10
+FROM node:12
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 RUN npm install pm2 -g --unsafe-perm
 COPY package.json ./
-COPY yarn.lock ./
+COPY --chown=node:node yarn.lock ./
 USER node
 RUN yarn
 COPY --chown=node:node . .
 EXPOSE 3000
-CMD [ "pm2-runtime", "index.js", "--max-memory-restart", "1G" ]
+CMD [ "pm2-runtime", "process.json" ]

@@ -1493,13 +1493,6 @@ cors@2.8.5, cors@^2.8.4:
     object-assign "^4"
     vary "^1"
 
-cron@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/cron/-/cron-1.6.0.tgz#15f92c1b5a930c5cdfcd53fe940064fa8ca2e72d"
-  integrity sha512-8OkXbeK3qF42ndzkIkCo3zfCDg2TxGjQiCQqVE+ZFFHa4vAcw0PdBc5i/6aJ9FppLncyKZmDuZdJ9/uuXEYZaw==
-  dependencies:
-    moment-timezone "^0.5.x"
-
 cross-env@^5.1.4:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.0.tgz#6ecd4c015d5773e614039ee529076669b9d126f2"
@@ -4536,18 +4529,6 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
-
-moment-timezone@^0.5.x:
-  version "0.5.23"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.23.tgz#7cbb00db2c14c71b19303cb47b0fb0a6d8651463"
-  integrity sha512-WHFH85DkCfiNMDX5D3X7hpNH3/PUhjTGcD0U1SgfBGZxJ3qUmJh5FdvaFjcClxOvB3rzdfj4oRffbI38jEnC1w==
-  dependencies:
-    moment ">= 2.9.0"
-
-"moment@>= 2.9.0":
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 ms@2.0.0:
   version "2.0.0"
