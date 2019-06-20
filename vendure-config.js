@@ -27,6 +27,10 @@ const config = {
     importExportOptions: {
         importAssetsDir: path.join(__dirname, 'vendure/import-assets'),
     },
+    workerOptions: {
+        runInMainProcess: true,
+        options: { port: 3222 }
+    },
     plugins: [
         new AssetServerPlugin({
             route: 'assets',
