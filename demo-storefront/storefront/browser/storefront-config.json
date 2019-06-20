@@ -1,5 +1,5 @@
 {
-  "apiHost": "http://localhost",
-  "apiPort": 3000,
+  "apiHost": "https://demo.vendure.io",
+  "apiPort": 443,
   "shopApiPath": "shop-api"
 }

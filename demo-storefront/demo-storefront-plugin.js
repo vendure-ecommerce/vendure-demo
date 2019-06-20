@@ -9,6 +9,7 @@ const os = require('os');
  * This plugin runs the storefront demo server and proxies it to the /storefront path.
  */
 class DemoStorefrontPlugin {
+
     onBootstrap() {
         this.serverProcess = spawn(`node`, ['storefront/server.js'], { cwd: __dirname });
         this.serverProcess.stdout.on('data', (data) => {
