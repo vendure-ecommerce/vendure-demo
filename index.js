@@ -1,5 +1,3 @@
-const path = require('path')
-const CronJob = require('cron').CronJob;
 const { resetServer } = require('./reset-server');
 
 resetServer()
