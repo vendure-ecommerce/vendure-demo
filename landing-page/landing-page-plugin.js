@@ -1,13 +1,14 @@
 // @ts-check
 const fs = require('fs-extra');
 const path = require('path');
+const { VendurePlugin } = require('@vendure/core');
 
 /**
  * This plugin just serves the index.html file at the root.
  */
 class LandingPagePlugin {
 
-    configure(config) {
+    static configure(config) {
         config.middleware.push({
             handler: (req, res, next) => {
                 if (req.url.indexOf('/admin-api') !== 0 &&
@@ -24,5 +25,12 @@ class LandingPagePlugin {
         return config;
     }
 }
+Reflect.decorate([
+        VendurePlugin({
+            configuration: config => LandingPagePlugin.configure(config),
+        })
+    ],
+    LandingPagePlugin
+);
 
 module.exports = { LandingPagePlugin };

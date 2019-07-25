@@ -5,7 +5,8 @@ const { EmailPlugin, defaultEmailHandlers } = require('@vendure/email-plugin');
 const path = require('path');
 const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
 const { DemoStorefrontPlugin } = require('./demo-storefront/demo-storefront-plugin');
-
+// @ts-check
+/** @type VendureConfig */
 const config = {
     authOptions: {
         sessionSecret: '9s8wl7vkd8',
@@ -32,23 +33,23 @@ const config = {
         options: { port: 3222 }
     },
     plugins: [
-        new AssetServerPlugin({
+        AssetServerPlugin.init({
             route: 'assets',
             assetUploadDir: path.join(__dirname, 'vendure/assets'),
             port: 3001,
             assetUrlPrefix: 'https://demo.vendure.io/assets/'
         }),
-        new EmailPlugin({
+        EmailPlugin.init({
             handlers: defaultEmailHandlers,
             templatePath: path.join(__dirname, 'vendure/email/templates'),
             outputPath: path.join(__dirname, 'vendure/email/output'),
             mailboxPort: 3003,
             devMode: true,
         }),
-        new DefaultSearchPlugin(),
-        new AdminUiPlugin({ port: 3002 }),
-        new LandingPagePlugin(),
-        new DemoStorefrontPlugin(),
+        DefaultSearchPlugin,
+        AdminUiPlugin.init({ port: 3002 }),
+        LandingPagePlugin,
+        DemoStorefrontPlugin,
     ],
 };
 

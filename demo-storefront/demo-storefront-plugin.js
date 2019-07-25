@@ -1,5 +1,5 @@
 // @ts-check
-const { createProxyHandler } = require('@vendure/core');
+const { createProxyHandler, VendurePlugin } = require('@vendure/core');
 const fs = require('fs-extra');
 const path = require('path');
 const { spawn }  = require('child_process');
@@ -10,23 +10,7 @@ const os = require('os');
  */
 class DemoStorefrontPlugin {
 
-    onBootstrap() {
-        this.serverProcess = spawn(`node`, ['storefront/server.js'], { cwd: __dirname });
-        this.serverProcess.stdout.on('data', (data) => {
-          console.log(`Storefront server: ${data}`);
-        });
-
-        this.serverProcess.stderr.on('data', (data) => {
-          console.log(`Storefront server error: ${data}`);
-        });
-
-        this.serverProcess.on('close', (code) => {
-          console.log(`Storefront server exited with code ${code}`);
-        });
-        return this.overwriteAdminUiConfig('https://demo.vendure.io', 443);
-    }
-
-    configure(config) {
+    static configure(config) {
         config.middleware.push({
             handler: createProxyHandler({
                 label: 'Demo Storefront',
@@ -38,7 +22,23 @@ class DemoStorefrontPlugin {
         return config;
     }
 
-    onClose() {
+    onVendureBootstrap() {
+        this.serverProcess = spawn(`node`, ['storefront/server.js'], { cwd: __dirname });
+        this.serverProcess.stdout.on('data', (data) => {
+            console.log(`Storefront server: ${data}`);
+        });
+
+        this.serverProcess.stderr.on('data', (data) => {
+            console.log(`Storefront server error: ${data}`);
+        });
+
+        this.serverProcess.on('close', (code) => {
+            console.log(`Storefront server exited with code ${code}`);
+        });
+        return this.overwriteAdminUiConfig('https://demo.vendure.io', 443);
+    }
+
+    onVendureClose() {
         this.serverProcess.kill();
     }
 
@@ -55,6 +55,15 @@ class DemoStorefrontPlugin {
         await fs.writeFile(configPath, JSON.stringify(config, null, 2));
     }
 }
+
+Reflect.decorate(
+    [
+        VendurePlugin({
+            configuration: config => DemoStorefrontPlugin.configure(config),
+        })
+    ],
+    DemoStorefrontPlugin
+);
 
 module.exports = { DemoStorefrontPlugin };
 
