@@ -656,18 +656,18 @@
   resolved "https://registry.npmjs.org/@types/zen-observable/-/zen-observable-0.8.0.tgz#8b63ab7f1aa5321248aad5ac890a485656dcea4d"
   integrity sha512-te5lMAWii1uEJ4FwLjzdlbw3+n0FZNOvFXHxQDKeT0dilh7HOzdMzV2TrJVUzq8ep7J4Na8OUYPRLSQkJHAlrg==
 
-"@vendure/admin-ui-plugin@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-0.4.0.tgz#c6ae2e7258023fe374ad05bfa0cb6b99ed6377e6"
-  integrity sha512-q6cFASRstoMcCatfJEtYIh57Bn/Tfbu/c+RTrdWz8tmbg2e6QSDZ/1MPWZ1Nvg1Kfjw4rTAc1KqbSYcoRLKHow==
+"@vendure/admin-ui-plugin@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-0.5.0.tgz#46bc4343dd1d055be80ae7a780673cbbbff5be41"
+  integrity sha512-OVU20hUjyEmyspJA2tWmRbfsfTZCjhXniBiG/tnjizNf3bYgOKHP6DKeGc92QFSUOskixi5vOAYGzU1rAgVUZg==
   dependencies:
-    "@vendure/admin-ui" "^0.4.0"
+    "@vendure/admin-ui" "^0.5.0"
     fs-extra "^8.0.1"
 
-"@vendure/admin-ui@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@vendure/admin-ui/-/admin-ui-0.4.0.tgz#ada42d78d82af90f7459492d48aab2ba478b56ab"
-  integrity sha512-7jf7N1/zzhD9W7q0++4+nxghT84+2WhCgGtmbiE1YkBPzzjQx5KL36sGDuxkAJ8P9Rr4EsJeyQSXzB4hOepFBw==
+"@vendure/admin-ui@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@vendure/admin-ui/-/admin-ui-0.5.0.tgz#c67cd390439b37e8e3765f266615f399d5d34641"
+  integrity sha512-tveE7Pmgh9zIo/KBPz6r3PKflbLrBnvMIRIiaRduq5LmKt0TLXAj9oiXEznmvvzj0qy/RLPMzLHi2uMoK/ceaQ==
   dependencies:
     "@angular-devkit/build-angular" "^0.802.0"
     "@angular/animations" "^8.2.0"
@@ -710,23 +710,23 @@
     typescript "~3.5.3"
     zone.js "^0.10.0"
 
-"@vendure/asset-server-plugin@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-0.4.0.tgz#7877f34fddd0687cbc88a8ec3772e68884b3e0eb"
-  integrity sha512-tQ/c4RDEcJdyeygyS9qWxqVm1012Yom2lrqTtppx4f0LYNhvyzJazTrZPmdRcO7MF42SNv4C0yMV3JXUCrG5eg==
+"@vendure/asset-server-plugin@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-0.5.0.tgz#f4ba4ccbb5a24bdd790ddd4f1a0dd0fef905b4ed"
+  integrity sha512-3LTyzdVj9jqga/CaHPq0B9TW9goZjtyyT996ng4Zg06rz2rVte9HQri5wfoVGy6aUrMIjFTqSRd76NJrcYRiAw==
   dependencies:
     fs-extra "^8.0.1"
     sharp "^0.22.1"
 
-"@vendure/common@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@vendure/common/-/common-0.4.0.tgz#f51716b78d8e626349812bdb22cd8d7bfc92d850"
-  integrity sha512-mmaWteLwXTvKucF11iwTjHCCs3jP8A1egFvlt0SdCIseYqz5uNKlkcwhshJShgGkbo4ehtllSuZax7250SawqQ==
+"@vendure/common@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@vendure/common/-/common-0.5.0.tgz#c763759d8779b6d844d7a0838a5b4f1c48c847c4"
+  integrity sha512-ohM+u7ufZzKdVIhu8YEaXbVgapKi66+qPTYDJky+07csM/dExhXTcdl8CP6ngMnbq4N0Qom3ct3qMqwILUj1kA==
 
-"@vendure/core@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@vendure/core/-/core-0.4.0.tgz#0336f972b6fafbb142699d13e7e61f75db984e2a"
-  integrity sha512-s+kvdBAv2TYDTfLl0Ot68Kjkq1B+SO3FdlLBTkoLkm1n4mOKV190sXUPgR7+m6YfKlCJXS+dXSgnslIIHm/2FA==
+"@vendure/core@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@vendure/core/-/core-0.5.0.tgz#54b8382e39f6d74a95a30b7c6610b6315cbea4fb"
+  integrity sha512-8vfbuEyh6rVQsbXyDCxGKmy3o4zFLql9V2Ow00gOHSyr+ptvGDSm2aTteJtM55SM2LLDmAbWT15dfqvc+tuoCA==
   dependencies:
     "@nestjs/common" "6.5.2"
     "@nestjs/core" "6.5.2"
@@ -736,7 +736,7 @@
     "@nestjs/testing" "6.5.2"
     "@nestjs/typeorm" "6.1.3"
     "@types/fs-extra" "^7.0.0"
-    "@vendure/common" "^0.4.0"
+    "@vendure/common" "^0.5.0"
     apollo-server-express "^2.4.0"
     bcrypt "^3.0.6"
     body-parser "^1.18.3"
@@ -765,10 +765,10 @@
     rxjs "^6.3.3"
     typeorm "0.2.18"
 
-"@vendure/create@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@vendure/create/-/create-0.4.0.tgz#f8996548869ae2f2894106fb111e8d6cbbf584b5"
-  integrity sha512-i9UWtoNsqF5XZ5kCGGO3NH9y5lKEG8DnP+67g2dry6+Ukf5QP2m4fu7pzno9ae+ABfdzDK+ZhTpc9Ap9Z0MXZw==
+"@vendure/create@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@vendure/create/-/create-0.5.0.tgz#827bdf5e29c23197eb77a80cf256e9c55ea53352"
+  integrity sha512-aVBU+GOoIgbWv3grYyFMufEgI5Cs0y/wkIJ2Mj9KZyZc94eUjyGsZEWLZmKVeBAQjiaxm1gOIytIA0gGDg7rHQ==
   dependencies:
     chalk "^2.4.2"
     commander "^2.19.0"
@@ -781,10 +781,10 @@
     rxjs "^6.4.0"
     semver "^6.0.0"
 
-"@vendure/email-plugin@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-0.4.0.tgz#160975153aa958d94214d4dd7eb3fe7f60bd8b5e"
-  integrity sha512-ayV7MbVfAtPzOgeeKXhXTIZ3FrpfDyhAc4p1cPD/K/cgLgVwemSlmQRUjHTxUR4kTGrzJWTjIv/SAdtWMdO3LA==
+"@vendure/email-plugin@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-0.5.0.tgz#e8d08ad45854f1b38ddd411016fe0739616038fe"
+  integrity sha512-CURcJTCPb+5WlrsMqYRfP5SxtdMPYdfrOgWLaAZHxHMwuygcF5qE4tqhIPYbLO6ez538Q6TR+0gQwvPdj0Zsuw==
   dependencies:
     dateformat "^3.0.3"
     express "^4.16.4"
