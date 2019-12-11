@@ -10,11 +10,11 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@vendure/admin-ui-plugin": "^0.6.2",
-    "@vendure/asset-server-plugin": "^0.6.2",
-    "@vendure/core": "^0.6.2",
-    "@vendure/create": "^0.6.2",
-    "@vendure/email-plugin": "^0.6.2",
+    "@vendure/admin-ui-plugin": "^0.6.5",
+    "@vendure/asset-server-plugin": "^0.6.5",
+    "@vendure/core": "^0.6.5",
+    "@vendure/create": "^0.6.5",
+    "@vendure/email-plugin": "^0.6.5",
     "fs-extra": "^7.0.1",
     "graphql-request": "^1.8.2",
     "sqlite3": "^4.0.9"
