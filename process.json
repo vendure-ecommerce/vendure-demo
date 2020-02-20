@@ -6,6 +6,12 @@
       "max_memory_restart": "1G",
       "cron_restart": "0 3 */1 * *",
       "kill_timeout": 2000
+    },
+    {
+      "script": "demo-storefront/storefront/dist/server/main.js",
+      "name": "vendure-storefront",
+      "max_memory_restart": "1G",
+      "kill_timeout": 2000
     }
   ]
 }

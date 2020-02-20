@@ -7,5 +7,7 @@ COPY --chown=node:node yarn.lock ./
 USER node
 RUN yarn
 COPY --chown=node:node . .
+RUN ["chmod", "+x", "demo-storefront/install-storefront.sh"]
+RUN demo-storefront/install-storefront.sh
 EXPOSE 3000
 CMD [ "pm2-runtime", "process.json" ]
