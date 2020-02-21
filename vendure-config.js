@@ -1,10 +1,9 @@
 const { AdminUiPlugin } = require('@vendure/admin-ui-plugin');
 const { AssetServerPlugin } = require('@vendure/asset-server-plugin');
-const { examplePaymentHandler, DefaultSearchPlugin } = require('@vendure/core');
+const { createProxyHandler, examplePaymentHandler, DefaultSearchPlugin } = require('@vendure/core');
 const { EmailPlugin, defaultEmailHandlers } = require('@vendure/email-plugin');
 const path = require('path');
 const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
-const { DemoStorefrontPlugin } = require('./demo-storefront/demo-storefront-plugin');
 // @ts-check
 /** @type VendureConfig */
 const config = {
@@ -32,6 +31,14 @@ const config = {
         runInMainProcess: true,
         options: { port: 3222 }
     },
+    middleware: [{
+        handler: createProxyHandler({
+            label: 'Demo Storefront',
+            port: 4000,
+            route: 'storefront'
+        }),
+        route: 'storefront',
+    }],
     plugins: [
         AssetServerPlugin.init({
             route: 'assets',
@@ -49,7 +56,6 @@ const config = {
         DefaultSearchPlugin,
         AdminUiPlugin.init({ port: 3002 }),
         LandingPagePlugin,
-        DemoStorefrontPlugin,
     ],
 };
 
