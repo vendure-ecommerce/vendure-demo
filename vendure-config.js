@@ -35,7 +35,7 @@ const config = {
         handler: createProxyHandler({
             label: 'Demo Storefront',
             port: 4000,
-            route: '/'
+            route: 'storefront'
         }),
         route: 'storefront',
     }],
