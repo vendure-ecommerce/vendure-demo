@@ -4,7 +4,13 @@ This is a demo project used as the basis for the online Vendure demo. The index.
 
 ## Storefront
 
-The storefront is fetched from an Amazon S3 bucket which contains build artifacts from the [vendure-storefront](https://github.com/vendure-ecommerce/storefront/) project. The version of the storefront app can be set in the first line of the Dockerfile.
+The storefront is fetched from an Amazon S3 bucket which contains build artifacts from the [vendure-storefront](https://github.com/vendure-ecommerce/storefront/) project. The version of the storefront app can be set in the following line in the dockerfile:
+
+```
+RUN ["./install-storefront.sh", "vX.Y.Z"]
+```
+
+This version should match one of the [storefront release tags](https://github.com/vendure-ecommerce/storefront/releases) 
 
 ## Running Locally
 
