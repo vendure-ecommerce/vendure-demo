@@ -1,3 +1,4 @@
+ARG STOREFRONT_VERSION=v0.1.8
 FROM node:12
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
@@ -8,6 +9,6 @@ USER node
 RUN yarn
 COPY --chown=node:node . .
 RUN ["chmod", "+x", "install-storefront.sh"]
-RUN ./install-storefront.sh
+RUN ./install-storefront.sh ${STOREFRONT_VERSION}
 EXPOSE 3000
 CMD [ "pm2-runtime", "process.json" ]
