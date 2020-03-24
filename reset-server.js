@@ -1,5 +1,5 @@
 const { bootstrap } = require('@vendure/core');
-const { populate } = require('@vendure/core/dist/cli/populate');
+const { populate } = require('@vendure/core/cli');
 const { config } = require('./vendure-config');
 const { exec } = require('child_process');
 const fs = require('fs-extra');
