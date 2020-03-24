@@ -54,7 +54,13 @@ const config = {
             devMode: true,
         }),
         DefaultSearchPlugin,
-        AdminUiPlugin.init({ port: 3002 }),
+        AdminUiPlugin.init({
+            port: 3002,
+            adminUiConfig: {
+                apiHost: 'auto',
+                apiPort: 'auto',
+            },
+        }),
         LandingPagePlugin,
     ],
 };
