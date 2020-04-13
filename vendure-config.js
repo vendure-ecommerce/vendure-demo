@@ -1,6 +1,6 @@
 const { AdminUiPlugin } = require('@vendure/admin-ui-plugin');
 const { AssetServerPlugin } = require('@vendure/asset-server-plugin');
-const { createProxyHandler, examplePaymentHandler, DefaultSearchPlugin } = require('@vendure/core');
+const { createProxyHandler, examplePaymentHandler, DefaultSearchPlugin, DefaultJobQueuePlugin } = require('@vendure/core');
 const { EmailPlugin, defaultEmailHandlers } = require('@vendure/email-plugin');
 const path = require('path');
 const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
@@ -40,6 +40,7 @@ const config = {
         route: 'storefront',
     }],
     plugins: [
+        DefaultJobQueuePlugin,
         AssetServerPlugin.init({
             route: 'assets',
             assetUploadDir: path.join(__dirname, 'vendure/assets'),
