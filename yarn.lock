@@ -545,30 +545,30 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vendure/admin-ui-plugin@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-0.11.0.tgz#a1a0f6e85bbcfb120c765f9ee781cbacc31b9316"
-  integrity sha512-/Kby2gn337ozh/DLebGJqMu9wbMUzK0s4PvUf/BtB8tVlaCVPR5DcoErD2c5EUpNfvckktvTmqGDuU/xgB1n4Q==
+"@vendure/admin-ui-plugin@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-0.11.1.tgz#6ef2026e0acb06349cf1b80c39f7c64ce0d2bf1a"
+  integrity sha512-fS8nzOhIeMZAA9VbsqKv8P/t2D1qvvDM4/vZUFVCZRWyvv9f3bepF2XcwZqlguHdBlHtc/+GB9SYomo/2bRfeA==
   dependencies:
     fs-extra "^9.0.0"
 
-"@vendure/asset-server-plugin@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-0.11.0.tgz#de636945003f6ac0b3fbcd164ca721ff2540ae88"
-  integrity sha512-9UWC4sYkUi4pyeC9tTs4on1aPpiCCjfTiZLpBGw6YHh+gX8o7+XeqgEvNi86oRqUX0bySGENKhA1cdCf9V1VlA==
+"@vendure/asset-server-plugin@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-0.11.1.tgz#7159da72ade06726ccc2d9f5ae30eb3261851b6c"
+  integrity sha512-SA7aSyvT7yegzajrj/Oe8Zcqz6cC7HYuwAumOEjlh+jDmXiPXSC/5/zt1GMnUICR+X7y6WWV6DtfRAxv1CWN2g==
   dependencies:
     fs-extra "^9.0.0"
     sharp "0.25.2"
 
-"@vendure/common@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.npmjs.org/@vendure/common/-/common-0.11.0.tgz#8b4489f26745e20e4f6b7e444d72b8857a37014c"
-  integrity sha512-jAhrcs441mV1SR9b+I/cB5bt9kZDDniDaiav493EHQ0r6QNsCCfRpTYZAbSIVmmWJqZU4F6EZ011Vk0qS6YRQw==
+"@vendure/common@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.npmjs.org/@vendure/common/-/common-0.11.1.tgz#96e8f560bffd08f23f6d112d5b34db607f6904d0"
+  integrity sha512-2WIuSjmXMx4UkcZYsE8lVWArriuQ/G3WWf6/VSemjtmfuTL6S9VCjjdCzFNJu7qo20gn5O0LeKyf/xZfjkobQQ==
 
-"@vendure/core@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.npmjs.org/@vendure/core/-/core-0.11.0.tgz#a006445e1711c3d10bf4d13143f886fce8001c90"
-  integrity sha512-93/Z/byA7uVHjC2kuyu/N67KSlf1YjAdUJ5q3TEAW5SWUWGh9gpTL/4wdo60KVkpsKRlU0KuYAVRi/28ml/Evw==
+"@vendure/core@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.npmjs.org/@vendure/core/-/core-0.11.1.tgz#f1840fd84a6e6a629579a50b8f1e66bd8f80ee19"
+  integrity sha512-RCzLj66ZKaJVcGJqCOynpXvrqFJZg5rIiwaUTJjs1//O2E6j+N5bze/OMEkO4YvdA5eKMTVruVcoKBH2elelcA==
   dependencies:
     "@nestjs/common" "7.0.5"
     "@nestjs/core" "7.0.5"
@@ -578,7 +578,7 @@
     "@nestjs/testing" "7.0.5"
     "@nestjs/typeorm" "7.0.0"
     "@types/fs-extra" "^8.0.1"
-    "@vendure/common" "^0.11.0"
+    "@vendure/common" "^0.11.1"
     apollo-server-express "2.11.0"
     bcrypt "^4.0.1"
     body-parser "^1.19.0"
@@ -607,10 +607,10 @@
     rxjs "^6.3.3"
     typeorm "0.2.24"
 
-"@vendure/create@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.npmjs.org/@vendure/create/-/create-0.11.0.tgz#a2c447b6860835924b9dd70385a3ec9dd815bd92"
-  integrity sha512-ajdURlxOUHqZzQjG4FNWAqBQZl2kEXElpyajQhgdOvQwt0p3tZrf1LuxysCeJbNFw3+VveREOJnB2hQarZUdaQ==
+"@vendure/create@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.npmjs.org/@vendure/create/-/create-0.11.1.tgz#edd4f5d78722a146c314f911dc200eb759492829"
+  integrity sha512-y4U4JyXSFPPEUnFvWyu0bwbodgmdrx+fdcTDQuv+Kepn3N3BXKM+ZSrPxX/wynpMARwtCt9a+UUO80A8tkIS1w==
   dependencies:
     chalk "^3.0.0"
     commander "^5.0.0"
@@ -624,10 +624,10 @@
     semver "^7.1.3"
     tcp-port-used "^1.0.1"
 
-"@vendure/email-plugin@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-0.11.0.tgz#48e7f45677727a54c314d2fe91f433e8b083d8da"
-  integrity sha512-OVgLkMNgJnMr26Pi0WuebZxwkaQ/hHhPKy2m9iXaOB4ok4FgF2b+JXhZSfdQNsbV0qFoqnDM1fRidlteZkmBTQ==
+"@vendure/email-plugin@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-0.11.1.tgz#c2defc8afdceb563c286dfbb58344b35dbf54dae"
+  integrity sha512-XAnRZB1lmkgE0uKdlHcomWDU762ADMToFrB+2y+ADTiFexbaPI2zYUbLekQWH2yxoC7xv712Zh1k0Y7sJ/py1w==
   dependencies:
     dateformat "^3.0.3"
     express "^4.16.4"
