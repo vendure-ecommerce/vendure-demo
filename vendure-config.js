@@ -7,13 +7,31 @@ const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
 // @ts-check
 /** @type VendureConfig */
 const config = {
+    apiOptions: {
+        port: 3000,
+        adminApiPath: 'admin-api',
+        shopApiPath: 'shop-api',
+        adminApiPlayground: {
+            settings: { 'request.credentials': 'include' },
+        },
+        adminApiDebug: true,
+        shopApiPlayground: {
+            settings: { 'request.credentials': 'include' },
+        },
+        shopApiDebug: true,
+        middleware: [{
+            handler: createProxyHandler({
+                label: 'Demo Storefront',
+                port: 4000,
+                route: 'storefront'
+            }),
+            route: 'storefront',
+        }],
+    },
     authOptions: {
         sessionSecret: '9s8wl7vkd8',
         requireVerification: false,
     },
-    port: 3000,
-    adminApiPath: 'admin-api',
-    shopApiPath: 'shop-api',
     dbConnectionOptions: {
         type: 'sqlite',
         synchronize: false, // not working with SQLite/SQL.js, see https://github.com/typeorm/typeorm/issues/2576
@@ -31,14 +49,6 @@ const config = {
         runInMainProcess: true,
         options: { port: 3222 }
     },
-    middleware: [{
-        handler: createProxyHandler({
-            label: 'Demo Storefront',
-            port: 4000,
-            route: 'storefront'
-        }),
-        route: 'storefront',
-    }],
     plugins: [
         DefaultJobQueuePlugin,
         AssetServerPlugin.init({

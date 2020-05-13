@@ -9,7 +9,7 @@ const { VendurePlugin } = require('@vendure/core');
 class LandingPagePlugin {
 
     static configure(config) {
-        config.middleware.push({
+        config.apiOptions.middleware.push({
             handler: (req, res, next) => {
                 if (req.url.indexOf('/admin-api') !== 0 &&
                     req.url.indexOf('/shop-api') !== 0 &&
