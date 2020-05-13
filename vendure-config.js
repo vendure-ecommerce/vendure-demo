@@ -70,7 +70,6 @@ const config = {
             adminUiConfig: {
                 apiHost: 'auto',
                 apiPort: 'auto',
-                availableLanguages: ['en', 'es', 'zh'],
             },
         }),
         LandingPagePlugin,
