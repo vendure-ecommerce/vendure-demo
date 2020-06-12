@@ -10,7 +10,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@vendure/admin-ui-plugin": "^0.13.0",
+    "@vendure/admin-ui-plugin": "0.13.0",
     "@vendure/asset-server-plugin": "^0.13.0",
     "@vendure/core": "^0.13.0",
     "@vendure/create": "^0.13.0",
