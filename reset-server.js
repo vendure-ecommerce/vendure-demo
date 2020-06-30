@@ -44,7 +44,6 @@ async function resetServer() {
                 console.log(err);
             });
         })
-        .then(() => createTestCustomer())
 }
 
 /**
@@ -65,6 +64,10 @@ function populateServer() {
     return populate(
         () => bootstrap({
             ...config,
+            authOptions: {
+                ...config.authOptions,
+                requireVerification: false,
+            },
             dbConnectionOptions: {
                 ...config.dbConnectionOptions,
                 synchronize: true,
@@ -72,7 +75,7 @@ function populateServer() {
             importExportOptions: {
                 importAssetsDir: path.join(__dirname, './node_modules/@vendure/create/assets/images'),
             },
-        }),
+        }).then((app) => createTestCustomer().then(() => app)),
         path.join(__dirname, './node_modules/@vendure/create/assets/initial-data.json'),
         path.join(__dirname, './node_modules/@vendure/create/assets/products.csv'),
         path.join(__dirname, './node_modules/@vendure/create/assets/images'),

@@ -30,7 +30,7 @@ const config = {
     },
     authOptions: {
         sessionSecret: '9s8wl7vkd8',
-        requireVerification: false,
+        requireVerification: true,
     },
     dbConnectionOptions: {
         type: 'sqlite',
@@ -62,6 +62,12 @@ const config = {
             templatePath: path.join(__dirname, 'vendure/email/templates'),
             outputPath: path.join(__dirname, 'vendure/email/output'),
             mailboxPort: 3003,
+            globalTemplateVars: {
+                fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
+                verifyEmailAddressUrl: 'https://demo.vendure.io/storefront/account/verify',
+                passwordResetUrl: 'https://demo.vendure.io/storefront/account/reset-password',
+                changeEmailAddressUrl: 'https://demo.vendure.io/storefront/account/change-email-address'
+            },
             devMode: true,
         }),
         DefaultSearchPlugin,
