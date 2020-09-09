@@ -110,6 +110,7 @@ function cacheExists() {
  * Creates a test customer
  */
 function createTestCustomer() {
+    console.log('Creating test customer');
     const query = `
         mutation {
           registerCustomerAccount(input: {
