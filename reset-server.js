@@ -118,7 +118,11 @@ function createTestCustomer() {
             lastName: "Zephyr"
             emailAddress: "test@vendure.io"
             password: "test"
-          })
+          }) {
+            ...on Success {
+              success
+            }
+          }
         }
     `;
     return request('http://localhost:3000/shop-api', query);
