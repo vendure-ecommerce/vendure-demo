@@ -1,22 +1,27 @@
-const { AdminUiPlugin } = require('@vendure/admin-ui-plugin');
-const { AssetServerPlugin } = require('@vendure/asset-server-plugin');
-const { createProxyHandler, examplePaymentHandler, DefaultSearchPlugin, DefaultJobQueuePlugin } = require('@vendure/core');
-const { EmailPlugin, defaultEmailHandlers } = require('@vendure/email-plugin');
-const path = require('path');
-const { LandingPagePlugin } = require('./landing-page/landing-page-plugin');
-// @ts-check
-/** @type VendureConfig */
-const config = {
+import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
+import { AssetServerPlugin } from '@vendure/asset-server-plugin';
+import {
+    createProxyHandler,
+    DefaultJobQueuePlugin,
+    DefaultSearchPlugin,
+    examplePaymentHandler,
+    VendureConfig
+} from '@vendure/core';
+import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
+import path from 'path';
+import { LandingPagePlugin } from './plugins/landing-page/landing-page-plugin';
+
+export const config: VendureConfig = {
     apiOptions: {
         port: 3000,
         adminApiPath: 'admin-api',
         shopApiPath: 'shop-api',
         adminApiPlayground: {
-            settings: { 'request.credentials': 'include' },
+            settings: {'request.credentials': 'include'},
         },
         adminApiDebug: true,
         shopApiPlayground: {
-            settings: { 'request.credentials': 'include' },
+            settings: {'request.credentials': 'include'},
         },
         shopApiDebug: true,
         middleware: [{
@@ -34,17 +39,14 @@ const config = {
     },
     dbConnectionOptions: {
         type: 'sqlite',
-        synchronize: false, // not working with SQLite/SQL.js, see https://github.com/typeorm/typeorm/issues/2576
+        synchronize: false,
         logging: false,
-        database: path.join(__dirname, 'vendure.sqlite'),
+        database: path.join(__dirname, '../vendure.sqlite'),
     },
     paymentOptions: {
         paymentMethodHandlers: [examplePaymentHandler],
     },
     customFields: {},
-    importExportOptions: {
-        importAssetsDir: path.join(__dirname, 'vendure/import-assets'),
-    },
     workerOptions: {
         runInMainProcess: true,
         options: { port: 3222 }
@@ -53,14 +55,14 @@ const config = {
         DefaultJobQueuePlugin,
         AssetServerPlugin.init({
             route: 'assets',
-            assetUploadDir: path.join(__dirname, 'vendure/assets'),
+            assetUploadDir: path.join(__dirname, '../static/assets'),
             port: 3001,
             assetUrlPrefix: 'https://demo.vendure.io/assets/'
         }),
         EmailPlugin.init({
             handlers: defaultEmailHandlers,
-            templatePath: path.join(__dirname, 'vendure/email/templates'),
-            outputPath: path.join(__dirname, 'vendure/email/output'),
+            templatePath: path.join(__dirname, '../static/email/templates'),
+            outputPath: path.join(__dirname, '../static/email/output'),
             mailboxPort: 3003,
             globalTemplateVars: {
                 fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
@@ -76,11 +78,8 @@ const config = {
             adminUiConfig: {
                 apiHost: 'auto',
                 apiPort: 'auto',
-                availableLanguages: ["en", "es", "zh_Hant", "zh_Hans", "pl", "de"],
             },
         }),
         LandingPagePlugin,
     ],
 };
-
-module.exports = { config };

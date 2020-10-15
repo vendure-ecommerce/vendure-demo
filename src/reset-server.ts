@@ -1,13 +1,13 @@
-const { bootstrap } = require('@vendure/core');
-const { populate } = require('@vendure/core/cli');
-const { config } = require('./vendure-config');
-const { exec } = require('child_process');
-const fs = require('fs-extra');
-const path = require('path');
-const { request } = require('graphql-request');
+import { INestApplication } from '@nestjs/common';
+import { bootstrap } from '@vendure/core';
+import { populate } from '@vendure/core/cli';
+import { config } from './vendure-config';
+import fs from 'fs-extra';
+import path from 'path';
+import { request } from 'graphql-request';
 
-const CACHE_DIR = 'data-cache';
-let app;
+const CACHE_DIR = '../data-cache';
+let app: INestApplication;
 
 // Allow graceful restarts by pm2. See http://pm2.keymetrics.io/docs/usage/signals-clean-restart/#graceful-stop
 process.on('SIGINT', async () => {
@@ -25,7 +25,7 @@ process.on('SIGINT', async () => {
 });
 
 
-async function resetServer() {
+export async function resetServer() {
     console.log(`[${(new Date()).toISOString()}] Resetting Vendure server to a pristine condition...`);
     if (app) {
         await app.close();
@@ -42,6 +42,7 @@ async function resetServer() {
             app = await bootstrap(config).catch(err => {
                 // tslint:disable-next-line:no-console
                 console.log(err);
+                throw err;
             });
         })
 }
@@ -52,8 +53,8 @@ async function resetServer() {
 async function clean() {
     console.log(`Cleaning up data`);
     await fs.remove('vendure.sqlite');
-    await fs.remove('vendure/assets');
-    await fs.remove('vendure/import-assets');
+    await fs.remove('static/assets');
+    await fs.remove('static/import-assets');
 }
 
 /**
@@ -73,13 +74,18 @@ function populateServer() {
                 synchronize: true,
             },
             importExportOptions: {
-                importAssetsDir: path.join(__dirname, './node_modules/@vendure/create/assets/images'),
+                importAssetsDir: getVendureCreateAsset('assets/images'),
             },
         }).then((app) => createTestCustomer().then(() => app)),
-        path.join(__dirname, './node_modules/@vendure/create/assets/initial-data.json'),
-        path.join(__dirname, './node_modules/@vendure/create/assets/products.csv'),
-        path.join(__dirname, './node_modules/@vendure/create/assets/images'),
+        getVendureCreateAsset('assets/initial-data.json'),
+        getVendureCreateAsset('assets/products.csv'),
     ).then(app => app.close());
+}
+
+function getVendureCreateAsset(fileName: string): string {
+    return path.join(
+        path.dirname(require.resolve('@vendure/create')), fileName
+    );
 }
 
 /**
@@ -87,8 +93,8 @@ function populateServer() {
  */
 async function resetFromCache() {
     console.log('Re-populating from cache');
-    await fs.copy(path.join(__dirname, `${CACHE_DIR}/vendure.sqlite`), path.join(__dirname, 'vendure.sqlite'));
-    await fs.copy(path.join(__dirname, `${CACHE_DIR}/vendure/assets`), path.join(__dirname, 'vendure/assets'));
+    await fs.copy(path.join(__dirname, `${CACHE_DIR}/vendure.sqlite`), path.join(__dirname, '../vendure.sqlite'));
+    await fs.copy(path.join(__dirname, `${CACHE_DIR}/static/assets`), path.join(__dirname, '../static/assets'));
 }
 
 /**
@@ -97,13 +103,13 @@ async function resetFromCache() {
 async function cachePopulatedContent() {
     if (!cacheExists()) {
         console.log('Saving populated data to cache');
-        await fs.copy(path.join(__dirname, 'vendure.sqlite'), path.join(__dirname, `${CACHE_DIR}/vendure.sqlite`));
-        await fs.copy(path.join(__dirname, 'vendure/assets'), path.join(__dirname, `${CACHE_DIR}/vendure/assets`));
+        await fs.copy(path.join(__dirname, '../vendure.sqlite'), path.join(__dirname, `${CACHE_DIR}/vendure.sqlite`));
+        await fs.copy(path.join(__dirname, '../static/assets'), path.join(__dirname, `${CACHE_DIR}/static/assets`));
     }
 }
 
 function cacheExists() {
-    return fs.existsSync(CACHE_DIR);
+    return fs.existsSync(path.join(__dirname, CACHE_DIR));
 }
 
 /**
@@ -127,7 +133,3 @@ function createTestCustomer() {
     `;
     return request('http://localhost:3000/shop-api', query);
 }
-
-module.exports = {
-    resetServer,
-};

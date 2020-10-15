@@ -1,14 +1,11 @@
-// @ts-check
-const fs = require('fs-extra');
-const path = require('path');
-const { VendurePlugin } = require('@vendure/core');
+import path from 'path';
+import { VendurePlugin } from '@vendure/core';
 
 /**
  * This plugin just serves the index.html file at the root.
  */
-class LandingPagePlugin {
-
-    static configure(config) {
+@VendurePlugin({
+    configuration: config => {
         config.apiOptions.middleware.push({
             handler: (req, res, next) => {
                 if (req.url.indexOf('/health') !== 0 &&
@@ -16,7 +13,7 @@ class LandingPagePlugin {
                     req.url.indexOf('/shop-api') !== 0 &&
                     req.url.indexOf('/storefront') !== 0) {
                     const file = req.url === '/' ? 'index.html' : req.url;
-                    res.sendFile(path.join(__dirname, file));
+                    res.sendFile(path.join(__dirname, '../../../static/landing-page', file));
                 } else {
                     next();
                 }
@@ -25,13 +22,5 @@ class LandingPagePlugin {
         });
         return config;
     }
-}
-Reflect.decorate([
-        VendurePlugin({
-            configuration: config => LandingPagePlugin.configure(config),
-        })
-    ],
-    LandingPagePlugin
-);
-
-module.exports = { LandingPagePlugin };
+})
+export class LandingPagePlugin {}
