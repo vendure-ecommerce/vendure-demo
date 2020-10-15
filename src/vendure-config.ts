@@ -10,6 +10,7 @@ import {
 import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
 import path from 'path';
 import { LandingPagePlugin } from './plugins/landing-page/landing-page-plugin';
+import { DemoModePlugin } from './plugins/demo-mode/demo-mode-plugin';
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -81,5 +82,6 @@ export const config: VendureConfig = {
             },
         }),
         LandingPagePlugin,
+        DemoModePlugin,
     ],
 };
