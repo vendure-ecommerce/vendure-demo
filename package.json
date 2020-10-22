@@ -7,6 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "compile": "tsc",
+    "compile:watch": "tsc --watch",
     "start": "node build/index.js"
   },
   "dependencies": {
@@ -15,9 +17,9 @@
     "@vendure/core": "0.16.2",
     "@vendure/create": "0.16.2",
     "@vendure/email-plugin": "0.16.2",
+    "better-sqlite3": "^7.1.1",
     "fs-extra": "^9.0.1",
-    "graphql-request": "^3.1.0",
-    "sqlite3": "^5.0.0"
+    "graphql-request": "^3.1.0"
   },
   "devDependencies": {
     "typescript": "^4.0.3"
