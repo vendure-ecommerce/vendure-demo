@@ -3,7 +3,7 @@ node_modules
 static/assets
 static/import-assets
 static/email/output
-vendure.sqlite
+vendure.sqlite*
 yarn-error.log
 data-cache
 dist
