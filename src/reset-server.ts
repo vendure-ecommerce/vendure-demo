@@ -1,5 +1,5 @@
 import { INestApplication } from '@nestjs/common';
-import { bootstrap } from '@vendure/core';
+import { bootstrap, JobQueueService } from '@vendure/core';
 import { populate } from '@vendure/core/cli';
 import { config } from './vendure-config';
 import fs from 'fs-extra';
@@ -39,11 +39,16 @@ export async function resetServer() {
             }
         })
         .then(async () => {
-            app = await bootstrap(config).catch(err => {
-                // tslint:disable-next-line:no-console
-                console.log(err);
-                throw err;
-            });
+            app = await bootstrap(config)
+                .then(async _app => {
+                    await _app.get(JobQueueService).start();
+                    return _app;
+                })
+                .catch(err => {
+                    // tslint:disable-next-line:no-console
+                    console.log(err);
+                    throw err;
+                });
         })
 }
 
@@ -63,23 +68,30 @@ async function clean() {
 function populateServer() {
     console.log('Populating');
     return populate(
-        () => bootstrap({
-            ...config,
-            authOptions: {
-                ...config.authOptions,
-                requireVerification: false,
-            },
-            dbConnectionOptions: {
-                ...config.dbConnectionOptions,
-                synchronize: true,
-            },
-            importExportOptions: {
-                importAssetsDir: getVendureCreateAsset('assets/images'),
-            },
-        }).then((app) => createTestCustomer().then(() => app)),
+        () => {
+            return bootstrap({
+                ...config,
+                authOptions: {
+                    ...config.authOptions,
+                    requireVerification: false,
+                },
+                dbConnectionOptions: {
+                    ...config.dbConnectionOptions,
+                    synchronize: true,
+                },
+                importExportOptions: {
+                    importAssetsDir: getVendureCreateAsset('assets/images'),
+                },
+            })
+                .then(async (app) => {
+                    await app.get(JobQueueService).start();
+                    return app;
+                });
+        },
         getVendureCreateAsset('assets/initial-data.json'),
-        getVendureCreateAsset('assets/products.csv'),
-    ).then(app => app.close());
+        getVendureCreateAsset('assets/products.csv')
+    ).then((app) => createTestCustomer().then(() => app))
+        .then(app => app.close());
 }
 
 function getVendureCreateAsset(fileName: string): string {

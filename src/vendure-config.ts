@@ -4,7 +4,7 @@ import {
     createProxyHandler,
     DefaultJobQueuePlugin,
     DefaultSearchPlugin,
-    examplePaymentHandler,
+    dummyPaymentHandler,
     VendureConfig
 } from '@vendure/core';
 import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
@@ -45,26 +45,21 @@ export const config: VendureConfig = {
         database: path.join(__dirname, '../vendure.sqlite'),
     },
     paymentOptions: {
-        paymentMethodHandlers: [examplePaymentHandler],
+        paymentMethodHandlers: [dummyPaymentHandler],
     },
     customFields: {},
-    workerOptions: {
-        runInMainProcess: true,
-        options: { port: 3222 }
-    },
     plugins: [
         DefaultJobQueuePlugin,
         AssetServerPlugin.init({
             route: 'assets',
             assetUploadDir: path.join(__dirname, '../static/assets'),
-            port: 3001,
             assetUrlPrefix: 'https://demo.vendure.io/assets/'
         }),
         EmailPlugin.init({
+            route: 'mailbox',
             handlers: defaultEmailHandlers,
             templatePath: path.join(__dirname, '../static/email/templates'),
             outputPath: path.join(__dirname, '../static/email/output'),
-            mailboxPort: 3003,
             globalTemplateVars: {
                 fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
                 verifyEmailAddressUrl: 'https://demo.vendure.io/storefront/account/verify',
@@ -75,6 +70,7 @@ export const config: VendureConfig = {
         }),
         DefaultSearchPlugin,
         AdminUiPlugin.init({
+            route: 'admin',
             port: 3002,
             adminUiConfig: {
                 apiHost: 'auto',
