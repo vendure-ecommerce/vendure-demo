@@ -8,7 +8,7 @@ USER node
 RUN yarn
 COPY --chown=node:node . .
 RUN ["chmod", "+x", "install-storefront.sh"]
-RUN ["./install-storefront.sh", "v0.1.23"]
+RUN ["./install-storefront.sh", "v0.1.24"]
 RUN ["yarn", "tsc"]
 EXPOSE 3000
 CMD [ "pm2-runtime", "process.json" ]
