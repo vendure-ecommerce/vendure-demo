@@ -683,31 +683,31 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vendure/admin-ui-plugin@1.0.0-beta.5":
-  version "1.0.0-beta.5"
-  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.0.0-beta.5.tgz#d1c3ec896999cc318d7e81c0464215df5ea08a26"
-  integrity sha512-x4CtsO/vI1yLoD03NxVLkjIsa9F7dqPM8jxEyH6N/zlVRxQXYGTg/MTlGUlJUD3SFacFMFNhsk6RThRbpb93Tw==
+"@vendure/admin-ui-plugin@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.0.0-beta.7.tgz#ddf7ee4c5886550d9681fe0c16e38b894f1fa222"
+  integrity sha512-bZd/OGNAy7Pt+n2RUV/0r+QAy2e+oMTVE1CMrno5JMsxAf3OP7D2DNRKwjmB5Pbv0T/0rJiZy/TMsBkJKkPpgQ==
   dependencies:
     fs-extra "^9.0.1"
 
-"@vendure/asset-server-plugin@1.0.0-beta.5":
-  version "1.0.0-beta.5"
-  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-1.0.0-beta.5.tgz#6cd1b56b54385309add1f8696716172e90ee3289"
-  integrity sha512-bOfnWGY2SrM93k4I5iwHu2grt90U15iAbWC49RI2Dc4RgIAJTU3g652qf5kSuMBH/wTCqhJvG5EnpoBNlP3iIA==
+"@vendure/asset-server-plugin@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-1.0.0-beta.7.tgz#59b85881f1b366582f33686e7d9bacaf4ef92948"
+  integrity sha512-6zUY8aIJMbwWsy9oMsILLyqiKX8X/pX03+tR21QcuZ583n/6TpKMRMmcxIosFfLQSlD0SF9t3qc53ZtmmYH8bQ==
   dependencies:
     file-type "^16.2.0"
     fs-extra "^9.1.0"
-    sharp "0.27.2"
+    sharp "0.28.0"
 
-"@vendure/common@^1.0.0-beta.5":
-  version "1.0.0-beta.5"
-  resolved "https://registry.npmjs.org/@vendure/common/-/common-1.0.0-beta.5.tgz#32d9183083dc2509d4799fc7877cdaad36369689"
-  integrity sha512-crCCLADWJq3tyfgWpJM243Z6cfPzyAnn3mMy1NB4NwvM5qXtscNVNirOcz7ykXRxAoYzTQZEwv359txq0DHeYA==
+"@vendure/common@^1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.npmjs.org/@vendure/common/-/common-1.0.0-beta.7.tgz#9b5fe61eb9cd1ab56a7ae4a4f3307e7b004fc62e"
+  integrity sha512-bqAIKXXH07ThVDvph/tF7t0f4lYVYPRNDLb5laLuZaUuh6qd9+X8MT9hPqEDOTHcWdH06BtGlzzQvySBARKZAA==
 
-"@vendure/core@1.0.0-beta.5":
-  version "1.0.0-beta.5"
-  resolved "https://registry.npmjs.org/@vendure/core/-/core-1.0.0-beta.5.tgz#eb8bdb218d39990c67fc8f001ba40dc62981bd22"
-  integrity sha512-n+qZHwtCZmPXNqTtMpmeVnvTatdeaVUjz4ARzTEfVfywxlutg+5xPbi5ZTbrk4dosBaHra/F3Xj+GQB2hloMTA==
+"@vendure/core@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.npmjs.org/@vendure/core/-/core-1.0.0-beta.7.tgz#951c438338c87dcc4f01ce0eb253ade46eeb52ee"
+  integrity sha512-xc730l1r7XZ6R6WNz76dIC5CrSE1ubCGbK76zf8Jywqflkjp2qKjjpayh4waFv6UH8s+i3236LP+JK0wr6/GxQ==
   dependencies:
     "@graphql-tools/stitch" "^6.2.4"
     "@nestjs/common" "7.6.13"
@@ -718,7 +718,7 @@
     "@nestjs/testing" "7.6.13"
     "@nestjs/typeorm" "7.1.5"
     "@types/fs-extra" "^9.0.1"
-    "@vendure/common" "^1.0.0-beta.5"
+    "@vendure/common" "^1.0.0-beta.7"
     apollo-server-express "2.21.0"
     bcrypt "^5.0.0"
     body-parser "^1.19.0"
@@ -747,12 +747,12 @@
     rxjs "^6.6.3"
     typeorm "0.2.31"
 
-"@vendure/create@1.0.0-beta.5":
-  version "1.0.0-beta.5"
-  resolved "https://registry.npmjs.org/@vendure/create/-/create-1.0.0-beta.5.tgz#0aa6e559b4404ec5e8f82fa1da6aa85c998d3c46"
-  integrity sha512-G2s1370F7cLW+xuhL3DWP1r1CoOtNhG12iXPLYuNZvNTrKgtxsVtKoiUaU5XEcNJSGEaZ5iur3cyf578oebq2w==
+"@vendure/create@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.npmjs.org/@vendure/create/-/create-1.0.0-beta.7.tgz#a298d8ac7c28fe68959cf4ff6b0c23d692e63ba5"
+  integrity sha512-AzSkySZckLNWMAiAFM6zAoNl4NHjZ2LO8Eu3S7TxQPT5PRI54rUqD6EYjOL/vlNtpH+M8l+ANlRmkAYwFn71WA==
   dependencies:
-    "@vendure/common" "^1.0.0-beta.5"
+    "@vendure/common" "^1.0.0-beta.7"
     chalk "^4.1.0"
     commander "^7.1.0"
     cross-spawn "^7.0.3"
@@ -765,10 +765,10 @@
     semver "^7.3.2"
     tcp-port-used "^1.0.1"
 
-"@vendure/email-plugin@1.0.0-beta.5":
-  version "1.0.0-beta.5"
-  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-1.0.0-beta.5.tgz#436b66916f641c2758f611c0054ff725ee91d666"
-  integrity sha512-VVWvAVkG4vuSoDkl+4C5g4FZDseP/X52GhpZQo0B1ppciUEtiBqcGS2tyLyXkGyoPIsThyaOTMeZPjnObb1zQw==
+"@vendure/email-plugin@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-1.0.0-beta.7.tgz#670bebf332c32a5c4915cfb9ca731d8ee50da203"
+  integrity sha512-6GpmksPpdFMGiUIt3DkdBwMpCJiWhTGFkHF8iUqbwgBcwoMP/0WJksSC2grhHYDgjEUNLOGS0EgXDW5qFL8ZPg==
   dependencies:
     dateformat "^3.0.3"
     express "^4.17.1"
@@ -1269,11 +1269,6 @@ array-flatten@1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
-
-array-flatten@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/array-flatten/-/array-flatten-3.0.0.tgz#6428ca2ee52c7b823192ec600fa3ed2f157cd541"
-  integrity sha512-zPMVc3ZYlGLNk4mpK1NzP2wg0ml9t7fUgDsayR5Y5rSzxQilzR9FGu/EH2jQOcKSAeAfWeylyW8juy3OkWRvNA==
 
 array-union@^2.1.0:
   version "2.1.0"
@@ -1915,13 +1910,6 @@ decompress-response@^4.2.0:
   integrity sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw==
   dependencies:
     mimic-response "^2.0.0"
-
-decompress-response@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/decompress-response/-/decompress-response-6.0.0.tgz#ca387612ddb7e104bd16d85aab00d5ecf09c66fc"
-  integrity sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==
-  dependencies:
-    mimic-response "^3.1.0"
 
 deep-extend@^0.6.0:
   version "0.6.0"
@@ -3395,11 +3383,6 @@ mimic-response@^2.0.0:
   resolved "https://registry.npmjs.org/mimic-response/-/mimic-response-2.1.0.tgz#d13763d35f613d09ec37ebb30bac0469c0ee8f43"
   integrity sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA==
 
-mimic-response@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/mimic-response/-/mimic-response-3.1.0.tgz#2d1d59af9c1b129815accc2c46a022a5ce1fa3c9"
-  integrity sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==
-
 minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
@@ -4009,7 +3992,7 @@ npm-packlist@^1.1.6:
     npm-bundled "^1.0.1"
     npm-normalize-package-bin "^1.0.1"
 
-npmlog@^4.0.1, npmlog@^4.0.2, npmlog@^4.1.2:
+npmlog@^4.0.1, npmlog@^4.0.2:
   version "4.1.2"
   resolved "https://registry.npmjs.org/npmlog/-/npmlog-4.1.2.tgz#08a7f2a8bf734604779a9efa4ad5cc717abb954b"
   integrity sha512-2uUqazuKlTaSI/dC8AzicUck7+IrEaOnN/e0jd3Xtt1KcGpwx30v50mL7oPyr/h9bL3E4aZccVwpwP+5W9Vjkg==
@@ -4565,10 +4548,10 @@ semver@^7.3.2:
   resolved "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz#604962b052b81ed0786aae84389ffba70ffd3938"
   integrity sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==
 
-semver@^7.3.4:
-  version "7.3.4"
-  resolved "https://registry.npmjs.org/semver/-/semver-7.3.4.tgz#27aaa7d2e4ca76452f98d3add093a72c943edc97"
-  integrity sha512-tCfb2WLjqFAtXn4KEdxIhalnRtoKFN7nAwj0B3ZXCbQloV2tq5eDbcTmT68JJD3nRJq24/XgxtQKFIpQdtvmVw==
+semver@^7.3.5:
+  version "7.3.5"
+  resolved "https://registry.npmjs.org/semver/-/semver-7.3.5.tgz#0b621c879348d8998e4b0e4be94b3f12e6018ef7"
+  integrity sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==
   dependencies:
     lru-cache "^6.0.0"
 
@@ -4624,19 +4607,17 @@ sha.js@^2.4.11:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-sharp@0.27.2:
-  version "0.27.2"
-  resolved "https://registry.npmjs.org/sharp/-/sharp-0.27.2.tgz#a939775e630e88600c0b5e68f20593aea722252f"
-  integrity sha512-w3FVoONPG/x5MXCc3wsjOS+b9h3CI60qkus6EPQU4dkT0BDm0PyGhDCK6KhtfT3/vbeOMOXAKFNSw+I3QGWkMA==
+sharp@0.28.0:
+  version "0.28.0"
+  resolved "https://registry.npmjs.org/sharp/-/sharp-0.28.0.tgz#93297cec530b3709e11677cf41565d9a654075a0"
+  integrity sha512-kGTaWLNMCkLYxkH2Pv7s+5LQBnWQ4mRKXs1XD19AWOxShWvU8b78qaWqTR/4ryNcPORO+qBoBnFF/Lzda5HgkQ==
   dependencies:
-    array-flatten "^3.0.0"
     color "^3.1.3"
     detect-libc "^1.0.3"
     node-addon-api "^3.1.0"
-    npmlog "^4.1.2"
     prebuild-install "^6.0.1"
-    semver "^7.3.4"
-    simple-get "^4.0.0"
+    semver "^7.3.5"
+    simple-get "^3.1.0"
     tar-fs "^2.1.1"
     tunnel-agent "^0.6.0"
 
@@ -4667,21 +4648,12 @@ simple-concat@^1.0.0:
   resolved "https://registry.npmjs.org/simple-concat/-/simple-concat-1.0.1.tgz#f46976082ba35c2263f1c8ab5edfe26c41c9552f"
   integrity sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==
 
-simple-get@^3.0.3:
+simple-get@^3.0.3, simple-get@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/simple-get/-/simple-get-3.1.0.tgz#b45be062435e50d159540b576202ceec40b9c6b3"
   integrity sha512-bCR6cP+aTdScaQCnQKbPKtJOKDp/hj9EDLJo3Nw4y1QksqaovlW/bnptB6/c1e+qmNIDHRK+oXFDdEqBT8WzUA==
   dependencies:
     decompress-response "^4.2.0"
-    once "^1.3.1"
-    simple-concat "^1.0.0"
-
-simple-get@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/simple-get/-/simple-get-4.0.0.tgz#73fa628278d21de83dadd5512d2cc1f4872bd675"
-  integrity sha512-ZalZGexYr3TA0SwySsr5HlgOOinS4Jsa8YB2GJ6lUNAazyAu4KG/VmzMTwAt2YVXzzVj8QmefmAonZIK2BSGcQ==
-  dependencies:
-    decompress-response "^6.0.0"
     once "^1.3.1"
     simple-concat "^1.0.0"
 
