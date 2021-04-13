@@ -12,7 +12,7 @@
     "start": "node build/index.js"
   },
   "dependencies": {
-    "@vendure/admin-ui-plugin": "1.0.0-beta.8",
+    "@vendure/admin-ui-plugin": "1.0.0-beta.9",
     "@vendure/asset-server-plugin": "1.0.0-beta.8",
     "@vendure/core": "1.0.0-beta.8",
     "@vendure/create": "1.0.0-beta.8",

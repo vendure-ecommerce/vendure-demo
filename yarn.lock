@@ -690,10 +690,10 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vendure/admin-ui-plugin@1.0.0-beta.8":
-  version "1.0.0-beta.8"
-  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.0.0-beta.8.tgz#790a4758ef6393913fd737fdebc5344199a9fc6f"
-  integrity sha512-vHG6Tjx1aEhSeKccDEpe/+N3p+uzhHc5/pleDlF0Aw2ZXoXIyqaNT9jQsNpw5ixmsevx4/VNne+g9bOJYF4m3g==
+"@vendure/admin-ui-plugin@1.0.0-beta.9":
+  version "1.0.0-beta.9"
+  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.0.0-beta.9.tgz#96702e93d836bfa6c369e74d34db0566e74a3f35"
+  integrity sha512-XbFTtsDogQEZq/Vg09lPCjbmo9xFG466KiKgVH7wzwj+LBcZz0JAYxVjkohcjuuj5hwwpGpD3IJWo7ZB624y6g==
   dependencies:
     fs-extra "^9.0.1"
 
