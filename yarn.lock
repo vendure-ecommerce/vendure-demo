@@ -690,17 +690,17 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vendure/admin-ui-plugin@1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.0.0-beta.9.tgz#96702e93d836bfa6c369e74d34db0566e74a3f35"
-  integrity sha512-XbFTtsDogQEZq/Vg09lPCjbmo9xFG466KiKgVH7wzwj+LBcZz0JAYxVjkohcjuuj5hwwpGpD3IJWo7ZB624y6g==
+"@vendure/admin-ui-plugin@1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.0.0-beta.10.tgz#cba47123436c1f08a2ca7fad0d7aeab17ee0ff52"
+  integrity sha512-em6A4z9IXfoAeH4YfHpXqDNu/Tgj8ocxbzYC+DGOve2oYf1L/oiiVUXBqeelWSuZkt4gC4luusz8exqWZTcrBw==
   dependencies:
     fs-extra "^9.0.1"
 
-"@vendure/asset-server-plugin@1.0.0-beta.8":
-  version "1.0.0-beta.8"
-  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-1.0.0-beta.8.tgz#f15df4084d25198f3b2a90f9986601b1a919d2c1"
-  integrity sha512-kkQTuKvsDxTBpBUt3Pp7nYzFgEZxMlEhW9E0L2IkkvQl/I+dqNdNGp5GiEZvo8gORvOuy6Xra0SGd6bLb0BaNQ==
+"@vendure/asset-server-plugin@1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-1.0.0-beta.10.tgz#eb8a49829b7b0d5e71efcd2c1a2ca9435af6b14f"
+  integrity sha512-eQJ8PTZMnhFpDnmTJSBnO8xe0onebE5VcOBVLbtbj8OSZNf3yrREjHgmeyhOTZseNDrCBSOOhQW7UwzXRjoyyQ==
   dependencies:
     file-type "^16.2.0"
     fs-extra "^9.1.0"
@@ -711,10 +711,10 @@
   resolved "https://registry.npmjs.org/@vendure/common/-/common-1.0.0-beta.8.tgz#a9cbe7cadbf998ff6813c283f8b7e5575e0a1fc8"
   integrity sha512-qBck5ygpWcW8xigcxz9ok1+HweLKFWW0B7p9GhxWDGe/mHbE550I+TO86ZJcMjjIS+AJf1WqHDjSBr5M6U6E6w==
 
-"@vendure/core@1.0.0-beta.8":
-  version "1.0.0-beta.8"
-  resolved "https://registry.npmjs.org/@vendure/core/-/core-1.0.0-beta.8.tgz#e56f9568dfbbfca33f3dacbd3d894b8cd16d1eb6"
-  integrity sha512-3PxDmUIl8p0WdTrIN5+1/q8z68qcBK3qB0avU+7lTEZLN/e9crk8VMBED66yD8hA9GaBEKiVJ5JFfl2FwZrNpg==
+"@vendure/core@1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.npmjs.org/@vendure/core/-/core-1.0.0-beta.10.tgz#930fe1bca8af84274970b4cce9758a07e4c5236c"
+  integrity sha512-anbsik5htN5S5kU/K7CBXNu25rDWN8OekT/YT8pH2TF7on+lvjYUjKEPPAAb0kSniSCnB0Nw78lnd27cXyb6hg==
   dependencies:
     "@graphql-tools/stitch" "^6.2.4"
     "@nestjs/common" "7.6.13"
@@ -754,10 +754,10 @@
     rxjs "^6.6.3"
     typeorm "0.2.31"
 
-"@vendure/create@1.0.0-beta.8":
-  version "1.0.0-beta.8"
-  resolved "https://registry.npmjs.org/@vendure/create/-/create-1.0.0-beta.8.tgz#1445343efccaef12c798ea13cd93e3dbde5bfffb"
-  integrity sha512-iW3tuGtMfgIwbiBHrwstb+LpqpW/9ILR/vHB3v9Z9B9fwGkt97SCRsOoYJNrvGXPfPWoVmpUku/3eN5vJqW/ng==
+"@vendure/create@1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.npmjs.org/@vendure/create/-/create-1.0.0-beta.10.tgz#7a1362fb73cd23e1621445b91f8243056c44cdb9"
+  integrity sha512-d4ZO/LyVN/Y9UA9g1CNoTcAdsLvHJOoQStTH6B/h4kz9k4gVb1RRrG0ZUpNtDyiG+NSMwMRrDoECkoMhgygLpA==
   dependencies:
     "@vendure/common" "^1.0.0-beta.8"
     chalk "^4.1.0"
@@ -772,10 +772,10 @@
     semver "^7.3.2"
     tcp-port-used "^1.0.1"
 
-"@vendure/email-plugin@1.0.0-beta.8":
-  version "1.0.0-beta.8"
-  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-1.0.0-beta.8.tgz#0bb0dfbf68314f35306c7c5a63e29b78eee0acd9"
-  integrity sha512-iP7G9+c6x+8sogvoCk8c0ldynAzJW011DBGlV8XdIF+MwZhxPke1MpWrzHU0bBkDKnG6/EbrrZ/AgdtHzCUNOw==
+"@vendure/email-plugin@1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-1.0.0-beta.10.tgz#a161c1049d5913910e7ef1dad5fd980b7c297aca"
+  integrity sha512-po8aUXJL8I+FOvf4tkHsAUeeMt8tmm5y0CVptgPXmz9qlVCguXJlgU5HnbvhvlHkX2ggWFT1zzS55WjY5oZeoQ==
   dependencies:
     "@types/nodemailer" "^6.4.0"
     dateformat "^3.0.3"
