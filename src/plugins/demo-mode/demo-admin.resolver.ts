@@ -7,13 +7,14 @@ import {
     IllegalOperationError,
     Permission,
     RequestContext,
-    Transaction
+    Transaction,
 } from '@vendure/core';
 
 @Resolver()
 export class DemoAdminResolver {
 
-    constructor(private administratorService: AdministratorService) {}
+    constructor(private administratorService: AdministratorService) {
+    }
 
     @Transaction()
     @Mutation()
@@ -27,5 +28,29 @@ export class DemoAdminResolver {
             throw new IllegalOperationError('The superadmin account may not be modified in the demo!');
         }
         return this.administratorService.update(ctx, input);
+    }
+
+    @Mutation()
+    @Allow(Permission.DeleteCatalog)
+    deleteProduct(): Promise<Administrator> {
+        throw new IllegalOperationError('This action is not allowed in the demo');
+    }
+
+    @Mutation()
+    @Allow(Permission.UpdateCatalog)
+    updateCollection() {
+        throw new IllegalOperationError('This action is not allowed in the demo');
+    }
+
+    @Mutation()
+    @Allow(Permission.UpdateCatalog)
+    moveCollection(): Promise<Administrator> {
+        throw new IllegalOperationError('This action is not allowed in the demo');
+    }
+
+    @Mutation()
+    @Allow(Permission.DeleteCatalog)
+    deleteCollection(): Promise<Administrator> {
+        throw new IllegalOperationError('This action is not allowed in the demo');
     }
 }
