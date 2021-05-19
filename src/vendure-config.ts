@@ -35,7 +35,9 @@ export const config: VendureConfig = {
         }],
     },
     authOptions: {
-        sessionSecret: '9s8wl7vkd8',
+        cookieOptions: {
+            secret: '9s8wl7vkd8',
+        },
         requireVerification: true,
     },
     dbConnectionOptions: {
