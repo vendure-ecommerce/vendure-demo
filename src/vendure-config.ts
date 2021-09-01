@@ -39,6 +39,7 @@ export const config: VendureConfig = {
             secret: '9s8wl7vkd8',
         },
         requireVerification: true,
+        tokenMethod: ['cookie', 'bearer'],
     },
     dbConnectionOptions: {
         type: 'better-sqlite3',
