@@ -713,31 +713,31 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vendure/admin-ui-plugin@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.2.0.tgz#fe413d4a277f900953b492619244d3d67b76dcc3"
-  integrity sha512-afjPrj9nRQbo6YY1PyMe93mS1jqKBoGTqrNRzpJg+kMRaeUTzxthIu00aa+G8p7dIAsNB6/uptWzhtQfdsLIUg==
+"@vendure/admin-ui-plugin@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.npmjs.org/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.3.1.tgz#8785116fc93c83e16ea405b544c63f958233a16b"
+  integrity sha512-RXI+uI5KGzJE+b1MrmlGh1P6DRwZmjOKD9Er9vct9sB6JlUN+8N1jJSyt4yyIDWXxCkmL62fhxsPbOWQJuf/OQ==
   dependencies:
     fs-extra "^10.0.0"
 
-"@vendure/asset-server-plugin@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-1.2.0.tgz#997c76b672ada3bdb969a6127985295b9d1fa9cf"
-  integrity sha512-JJVcspBXGNuzngb4oMOoG0vkqRjKDU93fdRw/NP3DJ1VM/+d0Puufd69ahtkulmrX+wDHTHflg9VvT4+V2kECQ==
+"@vendure/asset-server-plugin@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.npmjs.org/@vendure/asset-server-plugin/-/asset-server-plugin-1.3.1.tgz#aa4751f7631826a4bf5aa028d1388cb7eab337f9"
+  integrity sha512-b/MYUPgqTcefA3AQGeXqEeCm+z9pEgzy0a5ev4bqKlDhnxkyCJKJsdRK2kD97L60oob3irqf8/roM+6r6l0E1g==
   dependencies:
     file-type "^16.2.0"
     fs-extra "^10.0.0"
     sharp "~0.29.0"
 
-"@vendure/common@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@vendure/common/-/common-1.2.0.tgz#434ccd25842b233eeb8fad9822e2d26ad00c7b28"
-  integrity sha512-Yq+aRkvvNLqO4nRx2MeWveLA7Inzq601wUOrts3oGlhj/62W+OyyzCLxRr62ZRcnVO8aFjugTVtGsEprUQVo5g==
+"@vendure/common@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.npmjs.org/@vendure/common/-/common-1.3.1.tgz#671f78a34517d6900dd599e4cc1f3447835d4163"
+  integrity sha512-yohXv69Oee7Cj4ZbySAKQWAoP1d8WbLUNeIG09MCcg5sFfwSNKwlaubw2ELeHwoPU+9eBR7wPmgJFNFBCWy51A==
 
-"@vendure/core@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@vendure/core/-/core-1.2.0.tgz#40dbc7b177e29f57330b59c9191716f005ed5f36"
-  integrity sha512-uG+pDs8A+xKV4xjvt1OXvHD8H4ZAbzFSOCuVWV195rGHQLeY6aauVOxwRJqotY+aM57lk8PE0B1JdRMiEzIlxQ==
+"@vendure/core@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.npmjs.org/@vendure/core/-/core-1.3.1.tgz#fd32ab954de1696d37e987ae0d8a93e3635a56d5"
+  integrity sha512-crbFvyxKwfi5QMteo22B3eNw4TBh87GUsCR5Npk7sr5DES4OogWZYgiEyy81gq2vBdonp2/SJtfIGhDll4J7lQ==
   dependencies:
     "@graphql-tools/stitch" "^7.5.3"
     "@nestjs/common" "7.6.17"
@@ -748,7 +748,7 @@
     "@nestjs/testing" "7.6.17"
     "@nestjs/typeorm" "7.1.5"
     "@types/fs-extra" "^9.0.1"
-    "@vendure/common" "^1.2.0"
+    "@vendure/common" "^1.3.1"
     apollo-server-express "2.24.1"
     bcrypt "^5.0.0"
     body-parser "^1.19.0"
@@ -776,12 +776,12 @@
     rxjs "^6.6.3"
     typeorm "0.2.31"
 
-"@vendure/create@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@vendure/create/-/create-1.2.0.tgz#d6c2e4ec3ce85083403a16d033d70a74bcabf1b5"
-  integrity sha512-L526ejo+OLuM2dCX2nv3SXdbAkndqxoPW7szVgzcAzmek6quruqcqTemDj/GVpufzYQU97q3SHnD4I/KdLJJiw==
+"@vendure/create@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.npmjs.org/@vendure/create/-/create-1.3.1.tgz#de85b1c3d8b79dce1074aa5bbdfdb5fb03f4ac41"
+  integrity sha512-giJxDSdzTVlRCTvUPzID4X0digHttAvTwB91nwHgbaypBepDln0v+IjgzjCHUP6lH+GVD2B9ct7S0CIgHh7FFA==
   dependencies:
-    "@vendure/common" "^1.2.0"
+    "@vendure/common" "^1.3.1"
     chalk "^4.1.0"
     commander "^7.1.0"
     cross-spawn "^7.0.3"
@@ -794,10 +794,10 @@
     semver "^7.3.2"
     tcp-port-used "^1.0.1"
 
-"@vendure/email-plugin@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-1.2.0.tgz#99cba6119534ea76069d3ba0ed0253a799d71689"
-  integrity sha512-MhSpw+4iQyaPFUlD6a9+bDeOr0RzVqTzFdAjuOIuSQE0ikAqxpo5JB6mIAeZEOzKVuqAEQFB8MN4t9AGK3xvsA==
+"@vendure/email-plugin@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.npmjs.org/@vendure/email-plugin/-/email-plugin-1.3.1.tgz#300da7c5c964e99a3fa94a75552672b74764f82f"
+  integrity sha512-SfWYdzKVOjVp8IoOzgc45u7ttXzZGN9jQAJf+t9jEhcWBaA1D112dTSb06rVYmE93mZluRyMi2w7262q1dwxPg==
   dependencies:
     "@types/nodemailer" "^6.4.0"
     dateformat "^3.0.3"
