@@ -30,6 +30,25 @@ export class DemoAdminResolver {
         return this.administratorService.update(ctx, input);
     }
 
+    @Transaction()
+    @Mutation()
+    @Allow(Permission.Owner)
+    async updateActiveAdministrator(
+        @Ctx() ctx: RequestContext,
+        @Args() args: any,
+    ): Promise<Administrator | undefined> {
+        if (ctx.activeUserId) {
+            const {input} = args;
+            const administrator = await this.administratorService.findOneByUserId(ctx, ctx.activeUserId);
+            if (administrator) {
+                if (administrator.id === 1) {
+                    throw new IllegalOperationError('The superadmin account may not be modified in the demo!');
+                }
+                return this.administratorService.update(ctx, {...input, id: administrator.id});
+            }
+        }
+    }
+
     @Mutation()
     @Allow(Permission.DeleteCatalog)
     deleteProduct(): Promise<Administrator> {
