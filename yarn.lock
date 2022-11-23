@@ -733,31 +733,31 @@
   resolved "https://registry.npmjs.org/@types/zen-observable/-/zen-observable-0.8.3.tgz#781d360c282436494b32fe7d9f7f8e64b3118aa3"
   integrity sha512-fbF6oTd4sGGy0xjHPKAt+eS2CrxJ3+6gQ3FGcBoIJR2TLAyCkCyI8JqZNy+FeON0AhVgNJoUumVoZQjBFUqHkw==
 
-"@vendure/admin-ui-plugin@1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.8.1.tgz#0835008d840ff37d4a3cc9471bc084ada18fb054"
-  integrity sha512-69DpJjXxFn/4jUGt/jUjlZX8LSksR0p089DrmuvAOHbWRFpHy1SyvOHuAtZ6fVO1A2qM1WO0BNeza5MSCs7bVw==
+"@vendure/admin-ui-plugin@1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@vendure/admin-ui-plugin/-/admin-ui-plugin-1.8.4.tgz#27247546d36dfe1f49c1e41204e273efe88518cc"
+  integrity sha512-TanhwZ5uk40Ukkt8jDT9f5E8Hd+Uh6Rbn7unES9aJBCBCpJZ3QuusbEqQ3wnuxCfDG8gghJMDWuR07b9qz/SKQ==
   dependencies:
     fs-extra "^10.0.0"
 
-"@vendure/asset-server-plugin@1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@vendure/asset-server-plugin/-/asset-server-plugin-1.8.1.tgz#1e792c62880920b7cedcaa565564790c0c87e4a9"
-  integrity sha512-az7u+u1zISIxl77Af/Por6sEOUMO+m4atkLW0ARGW37t6p7bzt+Bctg/OFSS6PvFp3ZV/MGqw54m8W7ihRuwng==
+"@vendure/asset-server-plugin@1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@vendure/asset-server-plugin/-/asset-server-plugin-1.8.4.tgz#600544e2a6cfe7189acbf2ca9df5032285bf0904"
+  integrity sha512-5VNvtK2xQjxI3+cIZVz5m5kqug9eE6BqYQe+rRTd2wN54hG+666m3MvNNqh1t7zCgc+1NRPGPWUYKCJ3eB8zBA==
   dependencies:
     file-type "^16.2.0"
     fs-extra "^10.0.0"
-    sharp "~0.30.7"
+    sharp "~0.31.2"
 
-"@vendure/common@^1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@vendure/common/-/common-1.8.1.tgz#5054665913f46b89418384e19b3dbb8c04ed0b04"
-  integrity sha512-h1Rn3tSe19mha9chnoM1jh8IDCHcY0vMjnV4MVNQV92HwZ4Qvby7srv2GoqVN2HRaTV4fV6O+HriKA4BqRyTfg==
+"@vendure/common@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@vendure/common/-/common-1.8.4.tgz#9ba771eb6fd8df4167186573be5dc386df580cc2"
+  integrity sha512-DsOMLimV8YJJjNu+fwMXYVoKEN0+7vHlJ2wObgjwfLX1vbtXA2Ekb2P2cF/NHdGP3UxAcHtVBAvUHUa3vAoPPA==
 
-"@vendure/core@1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-1.8.1.tgz#bfc1a76d2f819df989430adcfa8c220b4e985edb"
-  integrity sha512-f+hdJAA2zi+3KrYNOBZo0G29IrpoJYrTmU93/eOy87Y23vw1jaYhv4r7M7FKXTm6WJHsVnwlbLN+DA0pBypXvA==
+"@vendure/core@1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-1.8.4.tgz#16b464878995c441d524ed26657c678d763afb42"
+  integrity sha512-5/2W8zYwg5n1brVTQ7aJEXDYLUScT6xE194XTDpEx296AKQslBY7MLBSflDcYhvZS2mk7eksYSGXb48ZYnJYbw==
   dependencies:
     "@graphql-tools/stitch" "^7.5.3"
     "@nestjs/common" "7.6.17"
@@ -768,7 +768,7 @@
     "@nestjs/testing" "7.6.17"
     "@nestjs/typeorm" "7.1.5"
     "@types/fs-extra" "^9.0.1"
-    "@vendure/common" "^1.8.1"
+    "@vendure/common" "^1.8.4"
     apollo-server-express "2.24.1"
     bcrypt "^5.1.0"
     body-parser "^1.19.0"
@@ -797,12 +797,12 @@
     rxjs "^6.6.3"
     typeorm "0.2.45"
 
-"@vendure/create@1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@vendure/create/-/create-1.8.1.tgz#a4521223e7077db502a0f51f653c243d7ce59402"
-  integrity sha512-7twEGvbEcdfXQ8+31PbTA9sO64pbIHXnJuvtmYv421aIdUa3dpNJG1OY9CCWmGkgB3nNTw6rLIGUvaI+ndDHpw==
+"@vendure/create@1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@vendure/create/-/create-1.8.4.tgz#5d1cfca1011ef23acb091d30e7b1f7e6219af4e9"
+  integrity sha512-ubp0N8cjQmmMGkODahpZFy55SrAoR5CGpMUa57k6ZjWj5jQwxPW3jOEfrM/1XyI851S+k6w2MQq+IqLgh2gcyg==
   dependencies:
-    "@vendure/common" "^1.8.1"
+    "@vendure/common" "^1.8.4"
     chalk "^4.1.0"
     commander "^7.1.0"
     cross-spawn "^7.0.3"
@@ -815,10 +815,10 @@
     semver "^7.3.2"
     tcp-port-used "^1.0.1"
 
-"@vendure/email-plugin@1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@vendure/email-plugin/-/email-plugin-1.8.1.tgz#0ca5b4cb00ec7911703cf2166bc34eee26e683d4"
-  integrity sha512-e+T1tJJTbw9WMJRUOEMMybqyirr/P1iYubstIp/33adOZ9JAi5Ico939vhXqldz5BzjsHZRx7LzKzOlXjCHBVA==
+"@vendure/email-plugin@1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@vendure/email-plugin/-/email-plugin-1.8.4.tgz#1b5b39218d5fc07693f0a18df62aa89701045fb4"
+  integrity sha512-zZN+lByLlpRuEST7jOtELkoqvOmVCOFKTZEsufmXaKxM3uhvEJ2y7HNvNcyOORehdrUyu5IvWNl4JHoUwveSTg==
   dependencies:
     "@types/nodemailer" "^6.4.0"
     dateformat "^3.0.3"
@@ -4465,10 +4465,10 @@ semver@^7.3.5:
   dependencies:
     lru-cache "^6.0.0"
 
-semver@^7.3.7:
-  version "7.3.7"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.7.tgz#12c5b649afdbf9049707796e22a4028814ce523f"
-  integrity sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==
+semver@^7.3.8:
+  version "7.3.8"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.8.tgz#07a78feafb3f7b32347d725e33de7e2a2df67798"
+  integrity sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==
   dependencies:
     lru-cache "^6.0.0"
 
@@ -4524,16 +4524,16 @@ sha.js@^2.4.11:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-sharp@~0.30.7:
-  version "0.30.7"
-  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.30.7.tgz#7862bda98804fdd1f0d5659c85e3324b90d94c7c"
-  integrity sha512-G+MY2YW33jgflKPTXXptVO28HvNOo9G3j0MybYAHeEmby+QuD2U98dT6ueht9cv/XDqZspSpIhoSW+BAKJ7Hig==
+sharp@~0.31.2:
+  version "0.31.2"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.31.2.tgz#a8411c80512027f5a452b76d599268760c4e5dfa"
+  integrity sha512-DUdNVEXgS5A97cTagSLIIp8dUZ/lZtk78iNVZgHdHbx1qnQR7JAHY0BnXnwwH39Iw+VKhO08CTYhIg0p98vQ5Q==
   dependencies:
     color "^4.2.3"
     detect-libc "^2.0.1"
     node-addon-api "^5.0.0"
     prebuild-install "^7.1.1"
-    semver "^7.3.7"
+    semver "^7.3.8"
     simple-get "^4.0.1"
     tar-fs "^2.1.1"
     tunnel-agent "^0.6.0"
