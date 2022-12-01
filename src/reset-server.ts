@@ -1,10 +1,16 @@
-import { INestApplication } from '@nestjs/common';
-import { bootstrap, JobQueueService } from '@vendure/core';
-import { populate } from '@vendure/core/cli';
-import { config } from './vendure-config';
+import {INestApplication} from '@nestjs/common';
+import {
+    bootstrap,
+    CustomerService,
+    isGraphQlErrorResult,
+    JobQueueService,
+    OrderService,
+    RequestContextService
+} from '@vendure/core';
+import {populate} from '@vendure/core/cli';
+import {config} from './vendure-config';
 import fs from 'fs-extra';
 import path from 'path';
-import { request } from 'graphql-request';
 
 const CACHE_DIR = '../data-cache';
 let app: INestApplication;
@@ -90,7 +96,7 @@ function populateServer() {
         },
         getVendureCreateAsset('assets/initial-data.json'),
         getVendureCreateAsset('assets/products.csv')
-    ).then((app) => createTestCustomer().then(() => app))
+    ).then((app) => createTestCustomer(app).then(() => app))
         .then(app => app.close());
 }
 
@@ -127,21 +133,59 @@ function cacheExists() {
 /**
  * Creates a test customer
  */
-function createTestCustomer() {
+async function createTestCustomer(app: INestApplication) {
+    const customerService = app.get(CustomerService);
+    const requestContextService = app.get(RequestContextService);
+    const orderService = app.get(OrderService);
+    const ctx = await requestContextService.create({apiType: 'admin'});
+
+
     console.log('Creating test customer');
-    const query = `
-        mutation {
-          registerCustomerAccount(input: {
-            firstName: "Rio"
-            lastName: "Zephyr"
-            emailAddress: "test@vendure.io"
-            password: "test"
-          }) {
-            ...on Success {
-              success
-            }
-          }
-        }
-    `;
-    return request('http://localhost:3000/shop-api', query);
+    const customer = await customerService.create(ctx, {
+        firstName: 'Rio',
+        lastName: 'Zephyr',
+        emailAddress: 'test@vendure.io',
+    }, 'test');
+    if (isGraphQlErrorResult(customer)) {
+        return;
+    }
+    const addressInput = {
+        fullName: 'Rio Zephyr',
+              streetLine1: '253 North Avenue',
+              city: 'Malcolm',
+              province: 'South Westcott',
+              postalCode: '133002',
+              countryCode: 'US',
+              defaultBillingAddress: true,
+              defaultShippingAddress: true,
+              phoneNumber: '03342 4488822',
+    }
+    await customerService.createAddress(ctx, customer.id, addressInput)
+    const order = await orderService.create(ctx, customer.user?.id);
+    await pause(1000);
+    const variantIds = [67, 77, 23];
+    for (const id of variantIds) {
+        await orderService.addItemToOrder(ctx, order.id, id, 1);
+    }
+    await orderService.setShippingAddress(ctx, order.id, addressInput);
+    await orderService.setShippingMethod(ctx, order.id, 1);
+    await orderService.transitionToState(ctx, order.id, 'ArrangingPayment');
+    await pause(1000);
+    const completedOrder = await orderService.addPaymentToOrder(ctx, order.id, {
+        method: 'standard-payment',
+        metadata: {},
+    });
+    await pause(1000);
+    if (!isGraphQlErrorResult(completedOrder)) {
+        await orderService.settlePayment(ctx, completedOrder.payments[0].id);
+        console.log(`Created Order ${completedOrder.code}`);
+    } else {
+        console.log(`Failed to complete Order`);
+    }
+
+}
+
+// Used to make the order history items follow in the correct sequence.
+function pause(durationInMs: number) {
+    return new Promise(resolve => setTimeout(resolve, durationInMs));
 }
