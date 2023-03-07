@@ -2,7 +2,7 @@ import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import {
     Administrator,
     AdministratorService,
-    Allow,
+    Allow, ChannelService,
     Ctx,
     IllegalOperationError,
     Permission,
@@ -13,7 +13,7 @@ import {
 @Resolver()
 export class DemoAdminResolver {
 
-    constructor(private administratorService: AdministratorService) {
+    constructor(private administratorService: AdministratorService, private channelService: ChannelService) {
     }
 
     @Transaction()
@@ -28,6 +28,20 @@ export class DemoAdminResolver {
             throw new IllegalOperationError('The superadmin account may not be modified in the demo!');
         }
         return this.administratorService.update(ctx, input);
+    }
+
+    @Transaction()
+    @Mutation()
+    @Allow(Permission.DeleteChannel)
+    deleteChannel(
+        @Ctx() ctx: RequestContext,
+        @Args() args: any,
+    ): Promise<any> {
+        const {id} = args;
+        if (id === 1) {
+            throw new IllegalOperationError('The default channel may not be deleted in the demo!');
+        }
+        return this.channelService.delete(ctx, id);
     }
 
     @Transaction()
