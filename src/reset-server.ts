@@ -168,7 +168,7 @@ async function createTestCustomer(app: INestApplication) {
         await orderService.addItemToOrder(ctx, order.id, id, 1);
     }
     await orderService.setShippingAddress(ctx, order.id, addressInput);
-    await orderService.setShippingMethod(ctx, order.id, 1);
+    await orderService.setShippingMethod(ctx, order.id, [1]);
     await orderService.transitionToState(ctx, order.id, 'ArrangingPayment');
     await pause(1000);
     const completedOrder = await orderService.addPaymentToOrder(ctx, order.id, {
@@ -177,7 +177,7 @@ async function createTestCustomer(app: INestApplication) {
     });
     await pause(1000);
     if (!isGraphQlErrorResult(completedOrder)) {
-        await orderService.settlePayment(ctx, completedOrder.payments[0].id);
+        await orderService.settlePayment(ctx, completedOrder.payments?.[0].id);
         console.log(`Created Order ${completedOrder.code}`);
     } else {
         console.log(`Failed to complete Order`);

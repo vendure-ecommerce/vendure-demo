@@ -12,16 +12,16 @@
     "start": "node build/index.js"
   },
   "dependencies": {
-    "@vendure/admin-ui-plugin": "1.9.3",
-    "@vendure/asset-server-plugin": "1.9.3",
-    "@vendure/core": "1.9.3",
-    "@vendure/create": "1.9.3",
-    "@vendure/email-plugin": "1.9.3",
+    "@vendure/admin-ui-plugin": "2.0.0",
+    "@vendure/asset-server-plugin": "2.0.0",
+    "@vendure/core": "2.0.0",
+    "@vendure/create": "2.0.0",
+    "@vendure/email-plugin": "2.0.0",
     "better-sqlite3": "^7.6.2",
     "fs-extra": "^9.0.1",
     "graphql-request": "^3.4.0"
   },
   "devDependencies": {
-    "typescript": "4.3.5"
+    "typescript": "4.9.5"
   }
 }
