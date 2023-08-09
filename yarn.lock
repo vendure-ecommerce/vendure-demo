@@ -782,6 +782,13 @@
     mjml "^4.7.1"
     nodemailer "^6.4.13"
 
+"@vendure/harden-plugin@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@vendure/harden-plugin/-/harden-plugin-2.0.5.tgz#0d858eca0964c8695e62e59305b87673b86e4b51"
+  integrity sha512-zrVptafMq6V4ACPrIoHm4jJoe+iYKTYyL+n6eQ42EPQQVoGFstS8FG3VbSuGDqZy1UwmaHR1/0mfZTqc+4tWjQ==
+  dependencies:
+    graphql-query-complexity "^0.12.0"
+
 abbrev@1, abbrev@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -1972,6 +1979,13 @@ graphql-fields@^2.0.3:
   resolved "https://registry.yarnpkg.com/graphql-fields/-/graphql-fields-2.0.3.tgz#5e68dff7afbb202be4f4f40623e983b22c96ab8f"
   integrity sha512-x3VE5lUcR4XCOxPIqaO4CE+bTK8u6gVouOdpQX9+EKHr+scqtK5Pp/l8nIGqIpN1TUlkKE6jDCCycm/WtLRAwA==
 
+graphql-query-complexity@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/graphql-query-complexity/-/graphql-query-complexity-0.12.0.tgz#5f636ccc54da82225f31e898e7f27192fe074b4c"
+  integrity sha512-fWEyuSL6g/+nSiIRgIipfI6UXTI7bAxrpPlCY1c0+V3pAEUo1ybaKmSBgNr1ed2r+agm1plJww8Loig9y6s2dw==
+  dependencies:
+    lodash.get "^4.4.2"
+
 graphql-request@^3.4.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-3.7.0.tgz#c7406e537084f8b9788541e3e6704340ca13055b"
@@ -2334,6 +2348,11 @@ keygrip@~1.1.0:
   integrity sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==
   dependencies:
     tsscmp "1.0.6"
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
 
 lodash.omit@4.5.0:
   version "4.5.0"

@@ -11,6 +11,7 @@ import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
 import path from 'path';
 import { LandingPagePlugin } from './plugins/landing-page/landing-page-plugin';
 import { DemoModePlugin } from './plugins/demo-mode/demo-mode-plugin';
+import {HardenPlugin} from "@vendure/harden-plugin";
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -37,6 +38,7 @@ export const config: VendureConfig = {
     authOptions: {
         cookieOptions: {
             secret: '9s8wl7vkd8',
+            sameSite: 'none',
         },
         requireVerification: true,
         tokenMethod: ['cookie', 'bearer'],
@@ -82,5 +84,9 @@ export const config: VendureConfig = {
         }),
         LandingPagePlugin,
         DemoModePlugin,
+        HardenPlugin.init({
+           hideFieldSuggestions: false,
+           apiMode: 'dev',
+        }),
     ],
 };
