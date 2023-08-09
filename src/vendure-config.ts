@@ -38,8 +38,6 @@ export const config: VendureConfig = {
     authOptions: {
         cookieOptions: {
             secret: '9s8wl7vkd8',
-            sameSite: 'none',
-            secure: true,
         },
         requireVerification: true,
         tokenMethod: ['cookie', 'bearer'],
