@@ -686,32 +686,32 @@
     "@types/mime" "*"
     "@types/node" "*"
 
-"@vendure/admin-ui-plugin@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@vendure/admin-ui-plugin/-/admin-ui-plugin-2.0.4.tgz#7e7c0c3fa76c1e5025105049fba1bb3cdf864904"
-  integrity sha512-+Ivc4LTM5KGwMrYQcTv2CooSZIOMD/lS53K9D46kAdxTjXP8YI/AMfLq35LRvBXiixZ2SIJRW7Um1Ze7FtbqbQ==
+"@vendure/admin-ui-plugin@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@vendure/admin-ui-plugin/-/admin-ui-plugin-2.0.5.tgz#34d33180db3fec330be5ad1f95e74ae897119c85"
+  integrity sha512-dNbfggTM9C7bzl8ZSQbQiQLL04rXrzqAuWWhB3NSCUUkJF+QLRKCHYEaMVkXe1kzcdEYx83CJg+S0H+ufANofw==
   dependencies:
     date-fns "^2.30.0"
     fs-extra "^10.0.0"
 
-"@vendure/asset-server-plugin@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@vendure/asset-server-plugin/-/asset-server-plugin-2.0.4.tgz#9a1f6289da493ef1e9cef7d9d90f5b93ce53dc04"
-  integrity sha512-PNIQJ1pROwrjPy7mGxCYQdazFHwQIFQiEAu7/LjlX9YGonWa71aEGQ5CwSHXnGXE/kEt6bzPExQaeZyBY0L5Lg==
+"@vendure/asset-server-plugin@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@vendure/asset-server-plugin/-/asset-server-plugin-2.0.5.tgz#4dade9bbf014f604e12ea725b8a4e0605e405c16"
+  integrity sha512-WxoOcsrS602bZncZKZneSkOyPEPRiiVL9GYId5htOMTLZ2tZUIgHFtQ6pQ07GsAfgNUYqNxgWcn4sQ5lg/NarQ==
   dependencies:
     file-type "^16.5.3"
     fs-extra "^10.0.0"
     sharp "~0.32.1"
 
-"@vendure/common@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@vendure/common/-/common-2.0.4.tgz#60c3972ecedca920afb4867ccf6ba085358caabb"
-  integrity sha512-G77FlfKxbwX+CNyh2L4q3OrtY3r9riAsVCTEvWzrqNONxQazHsl01tyzWQYE1u/npYKmozEUU8VneejvE9/zyA==
+"@vendure/common@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@vendure/common/-/common-2.0.5.tgz#99e3135d41a698865a1eecbf80e2c70b0f6b1794"
+  integrity sha512-S4kYKNwJM9DL5TlNZe9aJ3EiK5YPj6zXUqj0ebsQ+HJRHHarO8OK2oj964WprZNwCJDMbZItPzPTIPutnb915g==
 
-"@vendure/core@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-2.0.4.tgz#51b81105ef547c7a13397f03df3fdde16c9d76ff"
-  integrity sha512-EZ2lxJgCRLNBWIZ/XpC+516RaB2O40xt7IOAOg4++77iiuM+US1aX7Wi6Nvpsbrs51mA5ZRs3iFBWEnvyuL5NQ==
+"@vendure/core@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@vendure/core/-/core-2.0.5.tgz#93099280e98fabd03b466b142d6c296ceb81f0a5"
+  integrity sha512-+IG+s2GRkfkxlEGR7UEbuuEwjRZMqOCJxvSd6NscUwqel39SIUnVSeETLEpg2tpVM5bRYKdDDIQXNQ7oDHwNOg==
   dependencies:
     "@graphql-tools/stitch" "^8.7.43"
     "@nestjs/apollo" "^10.2.0"
@@ -723,7 +723,7 @@
     "@nestjs/testing" "9.3.9"
     "@nestjs/typeorm" "9.0.1"
     "@types/fs-extra" "^9.0.1"
-    "@vendure/common" "^2.0.4"
+    "@vendure/common" "^2.0.5"
     apollo-server-express "3.6.3"
     bcrypt "^5.1.0"
     body-parser "^1.19.0"
@@ -753,13 +753,13 @@
     rxjs "^7.5.4"
     typeorm "0.3.11"
 
-"@vendure/create@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@vendure/create/-/create-2.0.4.tgz#65da4dceb2c8dbfbebf159f6cf1f5f0a35f2a5e9"
-  integrity sha512-I2AVEpH+r+abx00eu9d7iTE9k8++OQumxAtOZKyrx1R5PQBZQq3H2VU9FWkzxXfvveRaLBK9MpcIm7zJPWIHWA==
+"@vendure/create@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@vendure/create/-/create-2.0.5.tgz#deea2d65edc0ffe56f72b46c302a8e830140f7bc"
+  integrity sha512-B2efh9Nl44ArfF8SXzpgbuowgmACm58+A4JboCRaPUOTFaWQ1U+GWztt5Qq4VTAf1cMr29dF6O2K6G920evexg==
   dependencies:
     "@clack/prompts" "^0.6.3"
-    "@vendure/common" "^2.0.4"
+    "@vendure/common" "^2.0.5"
     commander "^10.0.0"
     cross-spawn "^7.0.3"
     detect-port "^1.5.1"
@@ -769,10 +769,10 @@
     semver "^7.3.2"
     tcp-port-used "^1.0.1"
 
-"@vendure/email-plugin@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@vendure/email-plugin/-/email-plugin-2.0.4.tgz#7b32c136039b0409e1945ec5fcfc6c1430ee85e2"
-  integrity sha512-Lh/oRJmm4GfQQ43xhnpio3UY34NTyuSmxzKVK/pccEu6VVnU9zSht4Iu9Q/rWI1MezSfYcHKYX7w+YLnuwjtjw==
+"@vendure/email-plugin@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@vendure/email-plugin/-/email-plugin-2.0.5.tgz#1dd698dc15773cf0da434b9f16e1db5f9bbaaa49"
+  integrity sha512-Uf5n0YZc79rUGUEu9CWnkDYzbGncvBJbVcD1aV1OcoFb40qjnYy2iF8GLPZeEXtKzM87vDMHa5iQuXH8W54d8g==
   dependencies:
     "@types/nodemailer" "^6.4.0"
     dateformat "^3.0.3"
