@@ -9,6 +9,6 @@ RUN npm i
 COPY --chown=node:node . .
 RUN ["chmod", "+x", "install-storefront.sh"]
 RUN ["./install-storefront.sh", "v0.1.27"]
-RUN ["npm", "run", "tsc"]
+RUN ["npm", "run", "compile"]
 EXPOSE 3000
 CMD [ "pm2-runtime", "process.json" ]
