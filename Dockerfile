@@ -5,10 +5,10 @@ RUN npm install pm2 -g --unsafe-perm
 COPY package.json ./
 COPY --chown=node:node yarn.lock ./
 USER node
-RUN yarn
+RUN npm i
 COPY --chown=node:node . .
 RUN ["chmod", "+x", "install-storefront.sh"]
 RUN ["./install-storefront.sh", "v0.1.27"]
-RUN ["yarn", "tsc"]
+RUN ["npm", "run", "tsc"]
 EXPOSE 3000
 CMD [ "pm2-runtime", "process.json" ]
