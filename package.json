@@ -4,7 +4,7 @@
   "description": "Demo of the Vendure server",
   "main": "src/index.ts",
   "author": "Michael Bromley",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "private": true,
   "scripts": {
     "compile": "tsc",
@@ -12,18 +12,18 @@
     "start": "node build/index.js"
   },
   "dependencies": {
-    "@vendure/admin-ui-plugin": "2.2.0",
-    "@vendure/asset-server-plugin": "2.2.0",
-    "@vendure/core": "2.2.0",
-    "@vendure/create": "2.2.0",
-    "@vendure/email-plugin": "2.2.0",
-    "@vendure/harden-plugin": "^2.2.0",
-    "better-sqlite3": "^9.4.3",
+    "@vendure/admin-ui-plugin": "3.0.0",
+    "@vendure/asset-server-plugin": "3.0.0",
+    "@vendure/core": "3.0.0",
+    "@vendure/create": "3.0.0",
+    "@vendure/email-plugin": "3.0.0",
+    "@vendure/harden-plugin": "^3.0.0",
+    "better-sqlite3": "^11.1.2",
     "fs-extra": "^11.2.0",
     "graphql-request": "^6.1.0"
   },
   "devDependencies": {
-    "@vendure/cli": "^2.2.0",
+    "@vendure/cli": "^3.0.0",
     "typescript": "4.9.5"
   }
 }
