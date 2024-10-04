@@ -7,7 +7,7 @@ import {
     dummyPaymentHandler,
     VendureConfig
 } from '@vendure/core';
-import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
+import {defaultEmailHandlers, EmailPlugin, FileBasedTemplateLoader} from '@vendure/email-plugin';
 import path from 'path';
 import { LandingPagePlugin } from './plugins/landing-page/landing-page-plugin';
 import { DemoModePlugin } from './plugins/demo-mode/demo-mode-plugin';
@@ -26,14 +26,6 @@ export const config: VendureConfig = {
             settings: {'request.credentials': 'include'},
         },
         shopApiDebug: true,
-        middleware: [{
-            handler: createProxyHandler({
-                label: 'Demo Storefront',
-                port: 4000,
-                route: 'storefront'
-            }),
-            route: 'storefront',
-        }],
     },
     authOptions: {
         cookieOptions: {
@@ -41,6 +33,10 @@ export const config: VendureConfig = {
         },
         requireVerification: true,
         tokenMethod: ['cookie', 'bearer'],
+        superadminCredentials: {
+            identifier: process.env.SUPERADMIN_USERNAME ?? 'superadmin',
+            password: process.env.SUPERADMIN_PASSWORD ?? 'superadmin',
+        }
     },
     dbConnectionOptions: {
         type: 'better-sqlite3',
@@ -62,7 +58,7 @@ export const config: VendureConfig = {
         EmailPlugin.init({
             route: 'mailbox',
             handlers: defaultEmailHandlers,
-            templatePath: path.join(__dirname, '../static/email/templates'),
+            templateLoader: new FileBasedTemplateLoader(path.join(__dirname, '../static/email/templates')),
             outputPath: path.join(__dirname, '../static/email/output'),
             globalTemplateVars: {
                 fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',

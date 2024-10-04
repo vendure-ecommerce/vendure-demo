@@ -1,7 +1,7 @@
 {
   "name": "vendure-demo",
   "version": "1.0.0",
-  "description": "Demo of the Vendure server",
+  "description": "Public Vendure Demo",
   "main": "src/index.ts",
   "author": "Michael Bromley",
   "license": "GPL-3.0-or-later",
@@ -12,11 +12,11 @@
     "start": "node build/index.js"
   },
   "dependencies": {
-    "@vendure/admin-ui-plugin": "3.0.0",
-    "@vendure/asset-server-plugin": "3.0.0",
-    "@vendure/core": "3.0.0",
-    "@vendure/create": "3.0.0",
-    "@vendure/email-plugin": "3.0.0",
+    "@vendure/admin-ui-plugin": "^3.0.0",
+    "@vendure/asset-server-plugin": "^3.0.0",
+    "@vendure/core": "^3.0.0",
+    "@vendure/create": "^3.0.0",
+    "@vendure/email-plugin": "^3.0.0",
     "@vendure/harden-plugin": "^3.0.0",
     "better-sqlite3": "^11.1.2",
     "fs-extra": "^11.2.0",
@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "@vendure/cli": "^3.0.0",
-    "typescript": "4.9.5"
+    "typescript": "5.3.3"
   }
 }
