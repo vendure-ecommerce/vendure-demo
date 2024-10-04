@@ -9,6 +9,7 @@
   "scripts": {
     "compile": "tsc",
     "compile:watch": "tsc --watch",
+    "dev": "ts-node src/index.ts",
     "start": "node build/index.js"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@vendure/cli": "^3.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "5.3.3"
   }
 }
