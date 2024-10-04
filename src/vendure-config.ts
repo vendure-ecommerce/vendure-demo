@@ -1,5 +1,5 @@
-import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
-import { AssetServerPlugin } from '@vendure/asset-server-plugin';
+import {AdminUiPlugin} from '@vendure/admin-ui-plugin';
+import {AssetServerPlugin} from '@vendure/asset-server-plugin';
 import {
     createProxyHandler,
     DefaultJobQueuePlugin,
@@ -9,8 +9,8 @@ import {
 } from '@vendure/core';
 import {defaultEmailHandlers, EmailPlugin, FileBasedTemplateLoader} from '@vendure/email-plugin';
 import path from 'path';
-import { LandingPagePlugin } from './plugins/landing-page/landing-page-plugin';
-import { DemoModePlugin } from './plugins/demo-mode/demo-mode-plugin';
+import {LandingPagePlugin} from './plugins/landing-page/landing-page-plugin';
+import {DemoModePlugin} from './plugins/demo-mode/demo-mode-plugin';
 import {HardenPlugin} from "@vendure/harden-plugin";
 
 export const config: VendureConfig = {
@@ -80,8 +80,9 @@ export const config: VendureConfig = {
         LandingPagePlugin,
         DemoModePlugin,
         HardenPlugin.init({
-           hideFieldSuggestions: false,
-           apiMode: 'dev',
+            maxQueryComplexity: 10000,
+            hideFieldSuggestions: false,
+            apiMode: 'dev',
         }),
     ],
 };
