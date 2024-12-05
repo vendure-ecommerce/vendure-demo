@@ -15,7 +15,7 @@
   "dependencies": {
     "@vendure/admin-ui-plugin": "^3.0.0",
     "@vendure/asset-server-plugin": "^3.0.0",
-    "@vendure/core": "^3.0.0",
+    "@vendure/core": "^3.1.0",
     "@vendure/create": "^3.0.0",
     "@vendure/email-plugin": "^3.0.0",
     "@vendure/harden-plugin": "^3.0.0",
