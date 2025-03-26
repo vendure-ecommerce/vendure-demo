@@ -20,12 +20,15 @@
     "@vendure/email-plugin": "^3.0.0",
     "@vendure/harden-plugin": "^3.0.0",
     "better-sqlite3": "^11.1.2",
-    "fs-extra": "^11.2.0",
-    "graphql-request": "^6.1.0"
+    "fs-extra": "^11.2.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "@vendure/cli": "^3.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "5.3.3"
+    "typescript": "~5.4.5"
+  },
+  "overrides": {
+    "graphql": "16.9.0"
   }
 }
