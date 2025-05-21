@@ -17,7 +17,6 @@ import path from "path";
 import { LandingPagePlugin } from "./plugins/landing-page/landing-page-plugin";
 import { DemoModePlugin } from "./plugins/demo-mode/demo-mode-plugin";
 import { HardenPlugin } from "@vendure/harden-plugin";
-import { SapErpIntegrationPlugin } from "./plugins/sap-erp-integration/sap-erp-integration.plugin";
 import { GraphiqlPlugin } from "@vendure/graphiql-plugin";
 
 export const config: VendureConfig = {
