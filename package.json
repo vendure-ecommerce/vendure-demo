@@ -13,20 +13,21 @@
     "start": "node build/index.js"
   },
   "dependencies": {
-    "@vendure/admin-ui-plugin": "^3.0.0",
-    "@vendure/asset-server-plugin": "^3.0.0",
-    "@vendure/core": "^3.0.0",
-    "@vendure/create": "^3.0.0",
-    "@vendure/email-plugin": "^3.0.0",
-    "@vendure/harden-plugin": "^3.0.0",
+    "@vendure/admin-ui-plugin": "^3.3.0",
+    "@vendure/asset-server-plugin": "^3.3.0",
+    "@vendure/core": "^3.3.0",
+    "@vendure/create": "^3.3.0",
+    "@vendure/email-plugin": "^3.3.0",
+    "@vendure/graphiql-plugin": "^3.3.0",
+    "@vendure/harden-plugin": "^3.3.0",
     "better-sqlite3": "^11.1.2",
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@vendure/cli": "^3.0.0",
+    "@vendure/cli": "^3.3.0",
     "ts-node": "^10.9.2",
-    "typescript": "~5.4.5"
+    "typescript": "~5.7.0"
   },
   "overrides": {
     "graphql": "16.9.0"

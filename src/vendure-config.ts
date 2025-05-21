@@ -18,20 +18,13 @@ import { LandingPagePlugin } from "./plugins/landing-page/landing-page-plugin";
 import { DemoModePlugin } from "./plugins/demo-mode/demo-mode-plugin";
 import { HardenPlugin } from "@vendure/harden-plugin";
 import { SapErpIntegrationPlugin } from "./plugins/sap-erp-integration/sap-erp-integration.plugin";
+import { GraphiqlPlugin } from "@vendure/graphiql-plugin";
 
 export const config: VendureConfig = {
   apiOptions: {
     port: 3000,
     adminApiPath: "admin-api",
     shopApiPath: "shop-api",
-    adminApiPlayground: {
-      settings: { "request.credentials": "include" },
-    },
-    adminApiDebug: true,
-    shopApiPlayground: {
-      settings: { "request.credentials": "include" },
-    },
-    shopApiDebug: true,
   },
   authOptions: {
     cookieOptions: {
@@ -96,6 +89,6 @@ export const config: VendureConfig = {
       hideFieldSuggestions: false,
       apiMode: "dev",
     }),
-    SapErpIntegrationPlugin.init({}),
+    GraphiqlPlugin.init(),
   ],
 };
