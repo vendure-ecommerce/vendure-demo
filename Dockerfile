@@ -1,5 +1,8 @@
 FROM node:20-alpine
 
+ARG API_PUBLIC_URL
+ARG API_PUBLIC_PORT
+
 RUN apk add --no-cache libc6-compat python3 make g++
 
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app

@@ -73,16 +73,10 @@ export const config: VendureConfig = {
     }),
     DefaultSearchPlugin,
     DefaultSchedulerPlugin.init({}),
-    AdminUiPlugin.init({
-      route: "admin",
-      port: 3002,
-      adminUiConfig: {
-        apiHost: "auto",
-        apiPort: "auto",
-      },
-    }),
     LandingPagePlugin,
-    DemoModePlugin,
+    DemoModePlugin.init({
+      dashboardAppPath: path.join(__dirname, "../dist/dashboard"),
+    }),
     HardenPlugin.init({
       maxQueryComplexity: 10000,
       hideFieldSuggestions: false,
