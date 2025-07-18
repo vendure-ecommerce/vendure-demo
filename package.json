@@ -10,7 +10,8 @@
     "compile": "tsc",
     "compile:watch": "tsc --watch",
     "dev": "ts-node src/index.ts",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "build:dashboard": "vite build"
   },
   "dependencies": {
     "@types/express": "^5.0.3",

@@ -19,7 +19,8 @@ RUN npm i
 
 COPY --chown=node:node . .
 
-RUN ["npm", "run", "compile"]
+RUN npm run compile
+RUN npm run build:dashboard
 
 ENV VIPS_CONCURRENCY=$(nproc)
 
