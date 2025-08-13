@@ -77,11 +77,6 @@ export const config: VendureConfig = {
     DemoModePlugin.init({
       dashboardAppPath: path.join(__dirname, "../dist/dashboard"),
     }),
-    HardenPlugin.init({
-      maxQueryComplexity: 10000,
-      hideFieldSuggestions: false,
-      apiMode: "dev",
-    }),
     GraphiqlPlugin.init(),
   ],
 };

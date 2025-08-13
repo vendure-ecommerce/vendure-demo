@@ -95,7 +95,7 @@ function populateServer() {
                 });
         },
         getVendureCreateAsset('assets/initial-data.json'),
-        getVendureCreateAsset('assets/products.csv')
+        getVendureCreateAsset('assets/products.csv'),
     ).then((app) => createTestCustomer(app).then(() => app))
         .then(app => app.close());
 }
