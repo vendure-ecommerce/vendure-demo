@@ -15,7 +15,6 @@
     "strict": true,
     "strictPropertyInitialization": false,
     "sourceMap": false,
-    "newLine": "LF",
     "resolveJsonModule": true
   },
   "include": ["./src/**/*.ts"],

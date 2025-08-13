@@ -9,3 +9,4 @@ data-cache
 dist
 storefront.zip
 /build/
+.mcp.json

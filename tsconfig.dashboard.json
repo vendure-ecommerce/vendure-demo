@@ -9,5 +9,5 @@
       "@/vdb/*": ["./node_modules/@vendure/dashboard/src/lib/*"]
     }
   },
-  "include": ["src/plugins/**/dashboard/*", "src/gql/**/*.ts"]
+  "include": ["./src/plugins/**/dashboard/*", "./src/gql/**/*.ts" , "vite.*.*ts"]
 }

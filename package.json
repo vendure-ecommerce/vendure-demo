@@ -2,7 +2,6 @@
   "name": "vendure-demo",
   "version": "1.0.0",
   "description": "Public Vendure Demo",
-  "main": "src/index.ts",
   "author": "Michael Bromley",
   "license": "GPL-3.0-or-later",
   "private": true,

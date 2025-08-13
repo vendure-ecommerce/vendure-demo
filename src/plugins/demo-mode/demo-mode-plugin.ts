@@ -16,6 +16,7 @@ const loggerCtx = "DemoModePlugin";
   adminApiExtensions: {
     resolvers: [DemoAdminResolver],
   },
+  dashboard: './dashboard/index.tsx'
 })
 export class DemoModePlugin  {
   static options: DemoModePluginOptions;
