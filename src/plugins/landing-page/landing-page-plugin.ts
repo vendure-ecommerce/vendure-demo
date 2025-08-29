@@ -12,6 +12,7 @@ import path from 'path';
                 req.url.indexOf('/admin-api') !== 0 &&
                 req.url.indexOf('/shop-api') !== 0 &&
                 req.url.indexOf('/admin') !== 0 &&
+                req.url.indexOf('/legacy-admin') !== 0 &&
                 req.url.indexOf('/mailbox') !== 0 &&
                 req.url.indexOf('/assets') !== 0 &&
                 req.url.indexOf('/storefront') !== 0) {
