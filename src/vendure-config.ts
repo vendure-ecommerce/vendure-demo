@@ -13,6 +13,7 @@ import {DemoModePlugin} from "./plugins/demo-mode/demo-mode-plugin";
 import {GraphiqlPlugin} from "@vendure/graphiql-plugin";
 import {DashboardPlugin} from "@vendure/dashboard/plugin";
 import { DemoCmsPlugin } from './plugins/demo-cms/demo-cms.plugin';
+import {AdminUiPlugin} from "@vendure/admin-ui-plugin";
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -74,6 +75,15 @@ export const config: VendureConfig = {
         DashboardPlugin.init({
             route: 'admin',
             appDir: path.join(__dirname, '../dist/dashboard')
+        }),
+        AdminUiPlugin.init({
+            route: "legacy-admin",
+            port: 3002,
+            compatibilityMode: true,
+            adminUiConfig: {
+                apiHost: "auto",
+                apiPort: "auto",
+            },
         }),
         DemoCmsPlugin.init({}),
     ],
