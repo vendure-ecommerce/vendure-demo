@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import { resolve, join } from "path";
 
 export default defineConfig({
-  base: "/admin/",
+  base: "admin",
   build: {
     outDir: join(__dirname, "dist/dashboard"),
   },

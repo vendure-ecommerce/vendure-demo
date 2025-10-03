@@ -17,13 +17,11 @@ import {AdminUiPlugin} from "@vendure/admin-ui-plugin";
 
 export const config: VendureConfig = {
     apiOptions: {
-        port: 3000,
-        adminApiPath: "admin-api",
-        shopApiPath: "shop-api",
+        port: process.env.PORT ? +process.env.PORT : 3000,
     },
     authOptions: {
         cookieOptions: {
-            secret: "9s8wl7vkd8",
+            secret: process.env.COOKIE_SECRET,
         },
         requireVerification: true,
         tokenMethod: ["cookie", "bearer"],
