@@ -14,23 +14,23 @@
   },
   "dependencies": {
     "@types/express": "^5.0.3",
-    "@vendure/asset-server-plugin": "master",
-    "@vendure/core": "master",
-    "@vendure/create": "master",
-    "@vendure/dashboard": "master",
-    "@vendure/email-plugin": "master",
-    "@vendure/graphiql-plugin": "master",
-    "@vendure/harden-plugin": "master",
+    "@vendure/asset-server-plugin": "minor",
+    "@vendure/core": "minor",
+    "@vendure/create": "minor",
+    "@vendure/dashboard": "minor",
+    "@vendure/email-plugin": "minor",
+    "@vendure/graphiql-plugin": "minor",
+    "@vendure/harden-plugin": "minor",
     "better-sqlite3": "^12.0.0",
-    "@vendure/admin-ui": "master",
-    "@vendure/admin-ui-plugin": "master",
+    "@vendure/admin-ui": "minor",
+    "@vendure/admin-ui-plugin": "minor",
     "express": "^5.1.0",
     "express-rate-limit": "^8.0.1",
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@vendure/cli": "master",
+    "@vendure/cli": "minor",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.0"
   }

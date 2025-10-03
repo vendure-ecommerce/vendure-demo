@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:22-alpine
 
 ARG API_PUBLIC_URL
 ARG API_PUBLIC_PORT
@@ -15,7 +15,7 @@ COPY --chown=node:node package-lock.json ./
 
 USER node
 
-RUN npm i
+RUN npm ci
 
 COPY --chown=node:node . .
 
@@ -23,7 +23,6 @@ RUN npm run compile
 RUN npm run build:dashboard
 
 ENV VIPS_CONCURRENCY=$(nproc)
-
 
 EXPOSE 3000
 ENV PORT=3000
