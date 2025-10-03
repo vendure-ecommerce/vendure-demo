@@ -1,0 +1,17 @@
+name: Restart Northflank Service
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  restart-service:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restart Northflank Service
+        run: |
+          curl -X POST \
+            "https://api.northflank.com/v1/projects/${{ secrets.NORTHFLANK_PROJECT_ID }}/services/${{ secrets.NORTHFLANK_SERVICE_ID }}/restart" \
+            -H "Authorization: Bearer ${{ secrets.NORTHFLANK_API_TOKEN }}" \
+            -H "Content-Type: application/json"
