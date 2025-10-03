@@ -12,7 +12,7 @@ import {LandingPagePlugin} from "./plugins/landing-page/landing-page-plugin";
 import {DemoModePlugin} from "./plugins/demo-mode/demo-mode-plugin";
 import {GraphiqlPlugin} from "@vendure/graphiql-plugin";
 import {DashboardPlugin} from "@vendure/dashboard/plugin";
-import { DemoCmsPlugin } from './plugins/demo-cms/demo-cms.plugin';
+import {DemoCmsPlugin} from './plugins/demo-cms/demo-cms.plugin';
 import {AdminUiPlugin} from "@vendure/admin-ui-plugin";
 
 export const config: VendureConfig = {
