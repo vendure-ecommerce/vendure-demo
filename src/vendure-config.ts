@@ -15,6 +15,8 @@ import {DashboardPlugin} from "@vendure/dashboard/plugin";
 import {DemoCmsPlugin} from './plugins/demo-cms/demo-cms.plugin';
 import {AdminUiPlugin} from "@vendure/admin-ui-plugin";
 
+const BASE_URL = process.env.BASE_URL || "https://demo.vendure.io";
+
 export const config: VendureConfig = {
     apiOptions: {
         port: process.env.PORT ? +process.env.PORT : 3000,
@@ -45,7 +47,7 @@ export const config: VendureConfig = {
         AssetServerPlugin.init({
             route: "assets",
             assetUploadDir: path.join(__dirname, "../static/assets"),
-            assetUrlPrefix: "https://demo.vendure.io/assets/",
+            assetUrlPrefix: `${BASE_URL}/assets/`,
         }),
         EmailPlugin.init({
             route: "mailbox",
@@ -57,11 +59,11 @@ export const config: VendureConfig = {
             globalTemplateVars: {
                 fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
                 verifyEmailAddressUrl:
-                    "https://demo.vendure.io/storefront/account/verify",
+                    `${BASE_URL}/storefront/account/verify`,
                 passwordResetUrl:
-                    "https://demo.vendure.io/storefront/account/reset-password",
+                    `${BASE_URL}/storefront/account/reset-password`,
                 changeEmailAddressUrl:
-                    "https://demo.vendure.io/storefront/account/change-email-address",
+                    `${BASE_URL}/storefront/account/change-email-address`,
             },
             devMode: true,
         }),
