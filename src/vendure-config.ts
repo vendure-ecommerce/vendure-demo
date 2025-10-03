@@ -20,6 +20,7 @@ const BASE_URL = process.env.BASE_URL || "https://demo.vendure.io";
 export const config: VendureConfig = {
     apiOptions: {
         port: process.env.PORT ? +process.env.PORT : 3000,
+        trustProxy: true
     },
     authOptions: {
         cookieOptions: {
