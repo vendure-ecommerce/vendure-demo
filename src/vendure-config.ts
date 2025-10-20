@@ -14,6 +14,7 @@ import {GraphiqlPlugin} from "@vendure/graphiql-plugin";
 import {DashboardPlugin} from "@vendure/dashboard/plugin";
 import {DemoCmsPlugin} from './plugins/demo-cms/demo-cms.plugin';
 import {AdminUiPlugin} from "@vendure/admin-ui-plugin";
+import { DemoUserPlugin } from './plugins/demo-user/demo-user.plugin';
 
 const BASE_URL = process.env.BASE_URL || "https://demo.vendure.io";
 
@@ -87,5 +88,6 @@ export const config: VendureConfig = {
             },
         }),
         DemoCmsPlugin.init({}),
+        DemoUserPlugin.init({}),
     ],
 };

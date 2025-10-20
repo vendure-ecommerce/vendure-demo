@@ -5,10 +5,12 @@ import {
     isGraphQlErrorResult,
     JobQueueService,
     OrderService,
-    RequestContextService
+    RequestContextService,
+    Permission
 } from '@vendure/core';
 import {populate} from '@vendure/core/cli';
 import {config} from './vendure-config';
+import {DemoUserService} from './plugins/demo-user/services/demo-user.service';
 import fs from 'fs-extra';
 import path from 'path';
 
@@ -97,6 +99,7 @@ function populateServer() {
         getVendureCreateAsset('assets/initial-data.json'),
         getVendureCreateAsset('assets/products.csv'),
     ).then((app) => createTestCustomer(app).then(() => app))
+        .then((app) => createDemoAdministrators(app).then(() => app))
         .then(app => app.close());
 }
 
@@ -151,14 +154,14 @@ async function createTestCustomer(app: INestApplication) {
     }
     const addressInput = {
         fullName: 'Rio Zephyr',
-              streetLine1: '253 North Avenue',
-              city: 'Malcolm',
-              province: 'South Westcott',
-              postalCode: '133002',
-              countryCode: 'US',
-              defaultBillingAddress: true,
-              defaultShippingAddress: true,
-              phoneNumber: '03342 4488822',
+        streetLine1: '253 North Avenue',
+        city: 'Malcolm',
+        province: 'South Westcott',
+        postalCode: '133002',
+        countryCode: 'US',
+        defaultBillingAddress: true,
+        defaultShippingAddress: true,
+        phoneNumber: '03342 4488822',
     }
     await customerService.createAddress(ctx, customer.id, addressInput)
     const order = await orderService.create(ctx, customer.user?.id);
@@ -183,6 +186,32 @@ async function createTestCustomer(app: INestApplication) {
         console.log(`Failed to complete Order`);
     }
 
+}
+
+/**
+ * Creates demo administrators with custom roles
+ */
+async function createDemoAdministrators(app: INestApplication) {
+    const demoUserService = app.get(DemoUserService);
+
+    const storybookUsername = process.env.STORYBOOK_USERNAME;
+    const storybookPassword = process.env.STORYBOOK_PASSWORD;
+
+    if (storybookUsername && storybookPassword) {
+        console.log('Creating demo administrator');
+        // This is the user required for the Storybook docs
+        // to be able to access the data needed to render the list/detail
+        // components at storybook.vendure.io
+        await demoUserService.createDemoAdministrators(
+            'Storybook User',
+            [Permission.ReadCatalog, Permission.ReadSettings],
+            'Storybook',
+            'User',
+            storybookUsername,
+            storybookPassword,
+        );
+        console.log('Demo administrator created');
+    }
 }
 
 // Used to make the order history items follow in the correct sequence.
