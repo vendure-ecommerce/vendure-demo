@@ -28,6 +28,7 @@ import path from 'path';
             route: '/',
         });
         return config;
-    }
+    },
+    compatibility: '>3.0.0',
 })
 export class LandingPagePlugin {}

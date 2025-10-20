@@ -24,7 +24,7 @@ export const config: VendureConfig = {
     },
     authOptions: {
         cookieOptions: {
-            secret: process.env.COOKIE_SECRET,
+            secret: process.env.COOKIE_SECRET ?? 'f83ht910sj1ke3',
         },
         requireVerification: true,
         tokenMethod: ["cookie", "bearer"],
