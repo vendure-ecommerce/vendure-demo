@@ -9,26 +9,28 @@
     "compile": "tsc",
     "compile:watch": "tsc --watch",
     "dev": "node -r ts-node/register -r dotenv/config -r tsconfig-paths/register src/index.ts",
+    "dev:readonly": "TENANT_MODE=readonly npm run dev",
+    "dev:public": "TENANT_MODE=public npm run dev",
     "start": "node build/index.js",
     "build:dashboard": "vite build"
   },
   "dependencies": {
     "@types/express": "^4.17.21",
-    "@vendure/asset-server-plugin": "3.5.0",
-    "@vendure/core": "3.5.0",
-    "@vendure/create": "3.5.0",
-    "@vendure/dashboard": "3.5.0",
-    "@vendure/email-plugin": "3.5.0",
-    "@vendure/graphiql-plugin": "3.5.0",
-    "@vendure/harden-plugin": "3.5.0",
+    "@vendure/asset-server-plugin": "^3.5.0",
+    "@vendure/core": "^3.5.0",
+    "@vendure/create": "^3.5.0",
+    "@vendure/dashboard": "^3.5.0",
+    "@vendure/email-plugin": "^3.5.0",
+    "@vendure/graphiql-plugin": "^3.5.0",
+    "@vendure/harden-plugin": "^3.5.0",
     "better-sqlite3": "^12.0.0",
-    "@vendure/admin-ui": "3.5.0",
-    "@vendure/admin-ui-plugin": "3.5.0",
+    "@vendure/admin-ui": "^3.5.0",
+    "@vendure/admin-ui-plugin": "^3.5.0",
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@vendure/cli": "3.5.0",
+    "@vendure/cli": "^3.5.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.0"
   }

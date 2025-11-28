@@ -14,7 +14,8 @@ import {GraphiqlPlugin} from "@vendure/graphiql-plugin";
 import {DashboardPlugin} from "@vendure/dashboard/plugin";
 import {DemoCmsPlugin} from './plugins/demo-cms/demo-cms.plugin';
 import {AdminUiPlugin} from "@vendure/admin-ui-plugin";
-import { DemoUserPlugin } from './plugins/demo-user/demo-user.plugin';
+import {DemoUserPlugin} from './plugins/demo-user/demo-user.plugin';
+import {isPublicMode, isReadonlyMode} from './tenant-config';
 
 const BASE_URL = process.env.BASE_URL || "https://demo.vendure.io";
 
@@ -25,7 +26,7 @@ export const config: VendureConfig = {
     },
     authOptions: {
         cookieOptions: {
-            secret: process.env.COOKIE_SECRET ?? 'f83ht910sj1ke3',
+            secret: process.env.COOKIE_SECRET ?? 'SuperSecret',
         },
         requireVerification: true,
         tokenMethod: ["cookie", "bearer"],
@@ -51,43 +52,75 @@ export const config: VendureConfig = {
             assetUploadDir: path.join(__dirname, "../static/assets"),
             assetUrlPrefix: `${BASE_URL}/assets/`,
         }),
-        EmailPlugin.init({
-            route: "mailbox",
-            handlers: defaultEmailHandlers,
-            templateLoader: new FileBasedTemplateLoader(
-                path.join(__dirname, "../static/email/templates")
-            ),
-            outputPath: path.join(__dirname, "../static/email/output"),
-            globalTemplateVars: {
-                fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
-                verifyEmailAddressUrl:
-                    `${BASE_URL}/storefront/account/verify`,
-                passwordResetUrl:
-                    `${BASE_URL}/storefront/account/reset-password`,
-                changeEmailAddressUrl:
-                    `${BASE_URL}/storefront/account/change-email-address`,
-            },
-            devMode: true,
-        }),
         DefaultSearchPlugin,
         DefaultSchedulerPlugin.init({}),
         LandingPagePlugin,
-        DemoModePlugin.init({}),
         GraphiqlPlugin.init(),
         DashboardPlugin.init({
             route: 'admin',
             appDir: path.join(__dirname, '../dist/dashboard')
         }),
-        AdminUiPlugin.init({
-            route: "legacy-admin",
-            port: 3002,
-            compatibilityMode: true,
-            adminUiConfig: {
-                apiHost: "auto",
-                apiPort: "auto",
-            },
-        }),
-        DemoCmsPlugin.init({}),
-        DemoUserPlugin.init({}),
+
+        // Conditional plugins (READONLY mode only)
+        ...(isPublicMode() ? [
+            DemoModePlugin.init({}),
+            DemoCmsPlugin.init({}),
+            DemoUserPlugin.init({}),
+            AdminUiPlugin.init({
+                route: "legacy-admin",
+                port: 3002,
+                adminUiConfig: {
+                    apiHost: "auto",
+                    apiPort: "auto",
+                },
+            }),
+            EmailPlugin.init({
+                route: "mailbox",
+                handlers: defaultEmailHandlers,
+                templateLoader: new FileBasedTemplateLoader(
+                    path.join(__dirname, "../static/email/templates")
+                ),
+                outputPath: path.join(__dirname, "../static/email/output"),
+                globalTemplateVars: {
+                    fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
+                    verifyEmailAddressUrl:
+                        `${BASE_URL}/storefront/account/verify`,
+                    passwordResetUrl:
+                        `${BASE_URL}/storefront/account/reset-password`,
+                    changeEmailAddressUrl:
+                        `${BASE_URL}/storefront/account/change-email-address`,
+                },
+                devMode: true,
+            }),
+        ] : []),
+
+        // Conditional plugins (READONLY mode only)
+        ...(isReadonlyMode() ? [
+            EmailPlugin.init({
+                transport: {
+                    type: 'smtp',
+                    host: process.env.SMTP_HOST,
+                    auth: {
+                        type: 'login',
+                        user: process.env.STMP_USER ?? 'user',
+                        pass: process.env.STMP_PASS ?? 'pass'
+                    }
+                },
+                handlers: defaultEmailHandlers,
+                templateLoader: new FileBasedTemplateLoader(
+                    path.join(__dirname, "../static/email/templates")
+                ),
+                globalTemplateVars: {
+                    fromAddress: '"Vendure Store" <noreply@vendure.io>',
+                    verifyEmailAddressUrl:
+                        `${BASE_URL}/verify`,
+                    passwordResetUrl:
+                        `${BASE_URL}/reset-password`,
+                    changeEmailAddressUrl:
+                        `${BASE_URL}/account/profile`,
+                }
+            }),
+        ] : []),
+
     ],
 };
