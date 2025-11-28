@@ -11,7 +11,7 @@ import {
 import {populate} from '@vendure/core/cli';
 import {config} from './vendure-config';
 import {DemoUserService} from './plugins/demo-user/services/demo-user.service';
-import {getTenantMode} from './tenant-config';
+import {getTenantMode, isPublicMode, isReadonlyMode} from './tenant-config';
 import fs from 'fs-extra';
 import path from 'path';
 
@@ -194,6 +194,10 @@ async function createTestCustomer(app: INestApplication) {
  * Creates demo administrators with custom roles
  */
 async function createDemoAdministrators(app: INestApplication) {
+    if (isPublicMode()) {
+        return;
+    }
+
     const demoUserService = app.get(DemoUserService);
 
     const storybookUsername = process.env.STORYBOOK_USERNAME;

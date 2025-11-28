@@ -60,12 +60,12 @@ export const config: VendureConfig = {
             route: 'admin',
             appDir: path.join(__dirname, '../dist/dashboard')
         }),
+        DemoModePlugin.init({}),
 
         // Conditional plugins (READONLY mode only)
         ...(isPublicMode() ? [
-            DemoModePlugin.init({}),
+
             DemoCmsPlugin.init({}),
-            DemoUserPlugin.init({}),
             AdminUiPlugin.init({
                 route: "legacy-admin",
                 port: 3002,
@@ -96,6 +96,7 @@ export const config: VendureConfig = {
 
         // Conditional plugins (READONLY mode only)
         ...(isReadonlyMode() ? [
+            DemoUserPlugin.init({}),
             EmailPlugin.init({
                 transport: {
                     type: 'smtp',
