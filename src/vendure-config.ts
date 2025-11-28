@@ -17,7 +17,8 @@ import {AdminUiPlugin} from "@vendure/admin-ui-plugin";
 import {DemoUserPlugin} from './plugins/demo-user/demo-user.plugin';
 import {isPublicMode, isReadonlyMode} from './tenant-config';
 
-const BASE_URL = process.env.BASE_URL || "https://demo.vendure.io";
+const VENDURE_BASE_URL = process.env.VENDURE_BASE_URL || "https://demo.vendure.io";
+const FRONTEND_BASE_URL = process.env.FRONTEND_BASE_URL || "https://demo.vendure.io/storefront";
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -50,7 +51,7 @@ export const config: VendureConfig = {
         AssetServerPlugin.init({
             route: "assets",
             assetUploadDir: path.join(__dirname, "../static/assets"),
-            assetUrlPrefix: `${BASE_URL}/assets/`,
+            assetUrlPrefix: `${VENDURE_BASE_URL}/assets/`,
         }),
         DefaultSearchPlugin,
         DefaultSchedulerPlugin.init({}),
@@ -84,11 +85,11 @@ export const config: VendureConfig = {
                 globalTemplateVars: {
                     fromAddress: '"Vendure Demo Store" <noreply@vendure.io>',
                     verifyEmailAddressUrl:
-                        `${BASE_URL}/storefront/account/verify`,
+                        `${FRONTEND_BASE_URL}/account/verify`,
                     passwordResetUrl:
-                        `${BASE_URL}/storefront/account/reset-password`,
+                        `${FRONTEND_BASE_URL}/account/reset-password`,
                     changeEmailAddressUrl:
-                        `${BASE_URL}/storefront/account/change-email-address`,
+                        `${FRONTEND_BASE_URL}/account/change-email-address`,
                 },
                 devMode: true,
             }),
@@ -114,11 +115,11 @@ export const config: VendureConfig = {
                 globalTemplateVars: {
                     fromAddress: '"Vendure Store" <noreply@vendure.io>',
                     verifyEmailAddressUrl:
-                        `${BASE_URL}/verify`,
+                        `${FRONTEND_BASE_URL}/verify`,
                     passwordResetUrl:
-                        `${BASE_URL}/reset-password`,
+                        `${FRONTEND_BASE_URL}/reset-password`,
                     changeEmailAddressUrl:
-                        `${BASE_URL}/account/profile`,
+                        `${FRONTEND_BASE_URL}/account/profile`,
                 }
             }),
         ] : []),
