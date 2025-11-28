@@ -63,9 +63,8 @@ export const config: VendureConfig = {
         }),
         DemoModePlugin.init({}),
 
-        // Conditional plugins (READONLY mode only)
+        // Conditional plugins (PUBLIC mode only)
         ...(isPublicMode() ? [
-
             DemoCmsPlugin.init({}),
             AdminUiPlugin.init({
                 route: "legacy-admin",
@@ -104,7 +103,7 @@ export const config: VendureConfig = {
                     host: process.env.SMTP_HOST,
                     auth: {
                         type: 'login',
-                        user: process.env.STMP_USER ?? 'user',
+                        user: process.env.SMTP_USER ?? 'user',
                         pass: process.env.STMP_PASS ?? 'pass'
                     }
                 },
