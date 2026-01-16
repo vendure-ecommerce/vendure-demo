@@ -1,21 +1,22 @@
-import {AssetServerPlugin} from "@vendure/asset-server-plugin";
+import { AdminUiPlugin } from "@vendure/admin-ui-plugin";
+import { AssetServerPlugin } from "@vendure/asset-server-plugin";
 import {
+    DefaultGuestCheckoutStrategy,
     DefaultJobQueuePlugin,
     DefaultSchedulerPlugin,
     DefaultSearchPlugin,
     dummyPaymentHandler,
     VendureConfig,
 } from "@vendure/core";
-import {defaultEmailHandlers, EmailPlugin, FileBasedTemplateLoader,} from "@vendure/email-plugin";
+import { DashboardPlugin } from "@vendure/dashboard/plugin";
+import { defaultEmailHandlers, EmailPlugin, FileBasedTemplateLoader, } from "@vendure/email-plugin";
+import { GraphiqlPlugin } from "@vendure/graphiql-plugin";
 import path from "path";
-import {LandingPagePlugin} from "./plugins/landing-page/landing-page-plugin";
-import {DemoModePlugin} from "./plugins/demo-mode/demo-mode-plugin";
-import {GraphiqlPlugin} from "@vendure/graphiql-plugin";
-import {DashboardPlugin} from "@vendure/dashboard/plugin";
-import {DemoCmsPlugin} from './plugins/demo-cms/demo-cms.plugin';
-import {AdminUiPlugin} from "@vendure/admin-ui-plugin";
-import {DemoUserPlugin} from './plugins/demo-user/demo-user.plugin';
-import {isPublicMode, isReadonlyMode} from './tenant-config';
+import { DemoCmsPlugin } from './plugins/demo-cms/demo-cms.plugin';
+import { DemoModePlugin } from "./plugins/demo-mode/demo-mode-plugin";
+import { DemoUserPlugin } from './plugins/demo-user/demo-user.plugin';
+import { LandingPagePlugin } from "./plugins/landing-page/landing-page-plugin";
+import { isPublicMode, isReadonlyMode } from './tenant-config';
 
 const VENDURE_BASE_URL = process.env.VENDURE_BASE_URL || "https://demo.vendure.io";
 const FRONTEND_BASE_URL = process.env.FRONTEND_BASE_URL || "https://demo.vendure.io/storefront";
@@ -44,6 +45,12 @@ export const config: VendureConfig = {
     },
     paymentOptions: {
         paymentMethodHandlers: [dummyPaymentHandler],
+    },
+    orderOptions: {
+        guestCheckoutStrategy: new DefaultGuestCheckoutStrategy({
+            allowGuestCheckouts: true,
+            allowGuestCheckoutForRegisteredCustomers: false, 
+        })
     },
     customFields: {},
     plugins: [
