@@ -17,7 +17,7 @@
   "dependencies": {
     "@types/express": "^4.17.21",
     "@vendure/asset-server-plugin": "^3.5.2",
-    "@vendure/core": "^3.5.2",
+    "@vendure/core": "^3.5.3",
     "@vendure/create": "^3.5.2",
     "@vendure/dashboard": "^3.5.2",
     "@vendure/email-plugin": "^3.5.2",
