@@ -105,19 +105,12 @@ export const config: VendureConfig = {
         ...(isReadonlyMode() ? [
             DemoUserPlugin.init({}),
             EmailPlugin.init({
-                transport: {
-                    type: 'smtp',
-                    host: process.env.SMTP_HOST,
-                    auth: {
-                        type: 'login',
-                        user: process.env.SMTP_USER ?? 'user',
-                        pass: process.env.STMP_PASS ?? 'pass'
-                    }
-                },
+                route: "mailbox",
                 handlers: defaultEmailHandlers,
                 templateLoader: new FileBasedTemplateLoader(
                     path.join(__dirname, "../static/email/templates")
                 ),
+                outputPath: path.join(__dirname, "../static/email/output"),
                 globalTemplateVars: {
                     fromAddress: '"Vendure Store" <noreply@vendure.io>',
                     verifyEmailAddressUrl:
@@ -126,7 +119,8 @@ export const config: VendureConfig = {
                         `${FRONTEND_BASE_URL}/reset-password`,
                     changeEmailAddressUrl:
                         `${FRONTEND_BASE_URL}/account/profile`,
-                }
+                },
+                devMode: true,
             }),
         ] : []),
 
