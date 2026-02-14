@@ -41,8 +41,8 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name "vendure-ci-bot[bot]"
-          git config user.email "vendure-ci-bot[bot]@users.noreply.github.com"
+          git config user.name "vendure-ci-automation-bot[bot]"
+          git config user.email "221402278+vendure-ci-automation-bot[bot]@users.noreply.github.com"
           git add package.json package-lock.json
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore: update vendure packages to v${{ inputs.version }}"
